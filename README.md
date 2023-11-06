@@ -24,6 +24,12 @@ Clone the repository and install packages:
 npm install
 ```
 
+Generate prisma schema on backend root
+
+```bash
+npx prisma generate
+```
+
 Run backend:
 
 ```bash

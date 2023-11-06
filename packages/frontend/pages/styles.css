@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body-statue:hover {
+    opacity: 1;
+}
+
+.image-container:hover .body-chest,
+.image-container:hover .body-hand {
+  opacity: 1;
+}
