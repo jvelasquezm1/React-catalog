@@ -3,7 +3,6 @@ import Carousel from 'react-spring-3d-carousel';
 
 import { useRouter } from 'next/navigation';
 
-import Statue from '../../public/assets/Cap2.png';
 import Image from 'next/image';
 
 const Home = () => {
@@ -14,23 +13,30 @@ const Home = () => {
     key: (index + 1).toString(),
   })).map((slide_, index) => {
     const isCurrentSlide = slide === index;
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const chapterImage = require(`../../public/assets/chapters/c${
+      index + 1
+    }.jpeg`);
     const content = (
-      <Image
-        className={`w-80 h-96 rounded-l-3xl  ${
-          isCurrentSlide
-            ? 'hover:scale-110 transition-transform cursor-pointer'
-            : ''
-        }`}
-        src={Statue}
-        alt={index.toString()}
-      />
+      <div className="w-60 h-60 cursor-pointer">
+        <Image
+          className={`rounded-3xl h-full w-full${
+            isCurrentSlide ? 'hover:scale-110 transition-transform ' : ''
+          }`}
+          style={{ objectFit: 'cover' }}
+          src={chapterImage}
+          alt={index.toString()}
+        />
+        {isCurrentSlide && (
+          <p className="text-white text-center mt-4">Capitulo {index + 1}</p>
+        )}
+      </div>
     );
 
     if (isCurrentSlide) {
       return {
         ...slide_,
-        // To change for desired chapter
-        onClick: () => router.push('/chapters/chapter2'),
+        onClick: () => router.push(`/chapters/chapter${index + 1}`),
         content,
       };
     } else {
