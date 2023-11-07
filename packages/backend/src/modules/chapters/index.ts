@@ -16,7 +16,6 @@ export const typeDefs = gql`
 
   type Query {
     Chapters: [Chapter!]!
-    health: String!
   }
 
   type Mutation {
