@@ -1,7 +1,8 @@
 import { gql } from 'apollo-server-fastify';
 import * as users from './users';
+import * as chapters from './chapters';
 
-const imports = [users];
+const imports = [users, chapters];
 
 const genericTypeDefs = gql`
   enum Sort {

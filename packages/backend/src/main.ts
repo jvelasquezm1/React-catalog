@@ -1,7 +1,7 @@
 import Fastify from 'fastify';
 import * as dotenv from 'dotenv';
 import path from 'path';
-import { PrismaClient, User } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import { connectToDatabase } from './database';
 import { ApolloServer } from 'apollo-server-fastify';
@@ -12,7 +12,6 @@ const db = new PrismaClient(
 );
 
 export interface ResolverContext {
-  user?: User;
   models: Exclude<PrismaClient, 'connect' | 'disconnect' | 'on'>;
 }
 

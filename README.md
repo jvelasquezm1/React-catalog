@@ -24,6 +24,12 @@ Clone the repository and install packages:
 npm install
 ```
 
+Install graphql globally:
+
+```bash
+npm install -g graphql
+```
+
 Generate prisma schema on backend root
 
 ```bash

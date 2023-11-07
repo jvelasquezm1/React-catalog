@@ -1,7 +1,20 @@
 import React, { memo, useState } from 'react';
-import Carousel from 'react-spring-3d-carousel';
 
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
+type CarouselProps = {
+  slides: Array<{ onClick: () => void; content: JSX.Element; key: string }>;
+  offsetRadius: number;
+  showNavigation: boolean;
+  goToSlide: number;
+};
+
+const Carousel = dynamic<CarouselProps>(
+  () => import('react-spring-3d-carousel') as never,
+  {
+    ssr: false,
+  }
+);
 
 import Image from 'next/image';
 
@@ -28,7 +41,7 @@ const Home = () => {
           alt={index.toString()}
         />
         {isCurrentSlide && (
-          <p className="text-white text-center mt-4">Capitulo {index + 1}</p>
+          <p className="text-center mt-4">Capitulo {index + 1}</p>
         )}
       </div>
     );
@@ -36,7 +49,7 @@ const Home = () => {
     if (isCurrentSlide) {
       return {
         ...slide_,
-        onClick: () => router.push(`/chapters/chapter${index + 1}`),
+        onClick: () => router.push('/chapter'),
         content,
       };
     } else {
@@ -45,19 +58,34 @@ const Home = () => {
   });
 
   return (
-    <div className="h-screen flex bg-black">
-      <h2 className="uppercase self-center ml-4 text-white">
-        El libro de Daniel
-      </h2>
-      <div className="w-[80%] h-full m-auto">
-        <Carousel
-          slides={slides}
-          offsetRadius={5}
-          showNavigation={false}
-          goToSlide={slide}
-        />
+    <>
+      <div className="flex m-8">
+        <h2 className="flex-[0.25] text-center uppercase self-center">
+          El libro de Daniel
+        </h2>
+        <div className="flex-[0.5] h-72 m-auto">
+          <Carousel
+            slides={slides}
+            offsetRadius={5}
+            showNavigation={false}
+            goToSlide={slide}
+          />
+        </div>
       </div>
-    </div>
+      <div className="flex m-8">
+        <h2 className="flex-[0.25] text-center uppercase self-center">
+          El libro de apocalipsis
+        </h2>
+        <div className="flex-[0.5] h-72 m-auto">
+          <Carousel
+            slides={slides}
+            offsetRadius={5}
+            showNavigation={false}
+            goToSlide={slide}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 

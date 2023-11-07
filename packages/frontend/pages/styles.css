@@ -6,6 +6,18 @@
     opacity: 1;
 }
 
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overscroll-behavior: none;
+  overflow: auto;
+  color: white;
+  background-color: black;
+}
+
 .image-container:hover .body-chest,
 .image-container:hover .body-hand {
   opacity: 1;
