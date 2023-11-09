@@ -18,12 +18,14 @@ export type Chapter = {
   __typename?: 'Chapter';
   description: Scalars['String'];
   id: Scalars['ID'];
+  identifier: Scalars['String'];
   image?: Maybe<Scalars['String']>;
   title: Scalars['String'];
 };
 
 export type ChapterInput = {
   description: Scalars['String'];
+  identifier: Scalars['String'];
   image?: Maybe<Scalars['String']>;
   title: Scalars['String'];
 };
@@ -101,7 +103,7 @@ export type ChaptersQuery = (
   { __typename?: 'Query' }
   & { Chapters: Array<(
     { __typename?: 'Chapter' }
-    & Pick<Chapter, 'id' | 'title' | 'description' | 'image'>
+    & Pick<Chapter, 'id' | 'title' | 'description' | 'identifier' | 'image'>
   )> }
 );
 
@@ -112,6 +114,7 @@ export const ChaptersDocument = gql`
     id
     title
     description
+    identifier
     image
   }
 }

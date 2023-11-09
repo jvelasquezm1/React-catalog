@@ -5,12 +5,14 @@ export const typeDefs = gql`
     id: ID!
     title: String!
     description: String!
+    identifier: String!
     image: String
   }
 
   input ChapterInput {
     title: String!
     description: String!
+    identifier: String!
     image: String
   }
 

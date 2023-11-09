@@ -6,6 +6,7 @@ export const GET_CHAPTERS = gql`
       id
       title
       description
+      identifier
       image
     }
   }

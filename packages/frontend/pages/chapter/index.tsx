@@ -13,14 +13,12 @@ const Chapter = () => {
       <Statue />
       {data &&
         data.Chapters.map((chapter: Chapter) => {
-          return (
-            <>
-              <div className="m-4 flex flex-col flex-[0.65]">
-                <Card title={chapter.title} description={chapter.description} />
-                <div className="mt-auto mb-16">timeline</div>
-              </div>
-            </>
-          );
+          return chapter.identifier === 'BA' ? (
+            <div className="m-4 flex flex-col flex-[0.65]">
+              <Card title={chapter.title} description={chapter.description} />
+              <div className="mt-auto mb-16">timeline</div>
+            </div>
+          ) : null;
         })}
     </div>
   );
