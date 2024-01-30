@@ -7,8 +7,13 @@ import Hand from '../../public/assets/hand.png';
 import Belly from '../../public/assets/belly.png';
 import Knees from '../../public/assets/knees.png';
 import Feet from '../../public/assets/feet.png';
+import { StatueIdentifiers } from '../../public/shared/identifiers';
 
-const Statue = () => {
+interface StatueProps {
+  setIdentifier: (identifier: StatueIdentifiers) => void;
+}
+
+const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
   return (
     <div className="mt-8 flex-[0.35]">
       <Image
@@ -22,8 +27,12 @@ const Statue = () => {
         }
         src={Head}
         alt={'head'}
+        onClick={() => setIdentifier(StatueIdentifiers.Babylon)}
       />
-      <div className="image-container">
+      <div
+        className="image-container"
+        onClick={() => setIdentifier(StatueIdentifiers.MedoPersia)}
+      >
         <Image
           className={
             'body-chest  opacity-0 w-[400px] transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-40%] translate-y-[80%] cursor-pointer'
@@ -47,6 +56,7 @@ const Statue = () => {
         }
         src={Belly}
         alt={'belly'}
+        onClick={() => setIdentifier(StatueIdentifiers.Greece)}
       />
 
       <Image
@@ -55,6 +65,7 @@ const Statue = () => {
         }
         src={Knees}
         alt={'knees'}
+        onClick={() => setIdentifier(StatueIdentifiers.Rome)}
       />
 
       <Image
@@ -63,6 +74,7 @@ const Statue = () => {
         }
         src={Feet}
         alt={'feet'}
+        onClick={() => setIdentifier(StatueIdentifiers.DividedRome)}
       />
     </div>
   );
