@@ -1,13 +1,13 @@
 import React, { memo, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 
-import { GET_CHAPTERS } from '../../graphql/modules/chapters';
-import Statue from '../../components/statue';
-import Card from '../../components/card';
-import { Chapter } from '../../types/schema';
-import { StatueIdentifiers } from '../../public/shared/identifiers';
+import { GET_CHAPTERS } from '../../../graphql/modules/chapters';
+import Statue from '../../../components/statue';
+import Card from '../../../components/card';
+import { Chapter } from '../../../types/schema';
+import { StatueIdentifiers } from '../../../public/shared/identifiers';
 
-const Chapter = () => {
+const Chapter2 = () => {
   const { data } = useQuery(GET_CHAPTERS);
   const [identifier, setIdentifier] = useState(StatueIdentifiers.Babylon);
   const [selectedChapter, setSelectedChapter] = useState<Chapter>();
@@ -35,4 +35,4 @@ const Chapter = () => {
   );
 };
 
-export default memo(Chapter);
+export default memo(Chapter2);

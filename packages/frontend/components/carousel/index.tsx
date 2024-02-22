@@ -64,7 +64,7 @@ const $Carousel: React.FC<CarouselProps> = ({
     if (isCurrentSlide) {
       return {
         ...slide_,
-        onClick: () => router.push('/chapter'),
+        onClick: () => router.push(`/${book}/chapter${index + 1}`),
         content,
       };
     } else {
