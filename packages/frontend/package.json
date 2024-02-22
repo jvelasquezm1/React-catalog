@@ -7,7 +7,10 @@
   },
   "dependencies": {
     "css-loader": "^6.8.1",
+    "i18next": "^23.10.0",
+    "next-i18next": "^15.2.0",
     "postcss-loader": "^7.3.2",
+    "react-i18next": "^14.0.5",
     "style-loader": "^3.3.3"
   }
 }

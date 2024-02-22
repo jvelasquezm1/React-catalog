@@ -3,6 +3,7 @@ import Head from 'next/head';
 import './styles.css';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Link from 'next/link';
+import { appWithTranslation } from 'next-i18next';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const cache = new InMemoryCache();
@@ -33,4 +34,4 @@ function CustomApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default CustomApp;
+export default appWithTranslation(CustomApp);

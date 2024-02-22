@@ -1,6 +1,13 @@
 import React, { memo, useState } from 'react';
 
 import { Carousel } from '../components/carousel';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations('es', ['common'])),
+  },
+});
 
 const Home = () => {
   const [danielSlide, setDanielSlide] = useState(0);

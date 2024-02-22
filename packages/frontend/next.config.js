@@ -10,11 +10,9 @@ const nextConfig = {
   nx: {
     svgr: false,
   },
+  reactStrictMode: false,
 };
 
-const plugins = [
-  // Add more Next.js plugins to this list if needed.
-  withNx,
-];
+const plugins = [withNx];
 
 module.exports = plugins.reduce((config, plugin) => plugin(config), nextConfig);
