@@ -23,7 +23,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
       />
       <Image
         className={
-          'body-statue w-[120px] opacity-0 transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-60%] translate-y-[15%] cursor-pointer'
+          'body-statue w-[120px] opacity-0 transition-opacity duration-500 absolute top-0 translate-x-[145%] translate-y-[45%] cursor-pointer'
         }
         src={Head}
         alt={'head'}
@@ -35,7 +35,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
       >
         <Image
           className={
-            'body-chest  opacity-0 w-[400px] transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-40%] translate-y-[80%] cursor-pointer'
+            'body-chest  opacity-0 w-[400px] transition-opacity duration-500 absolute top-0 translate-x-[25%] translate-y-[120%] cursor-pointer'
           }
           src={Chest}
           alt={'chest'}
@@ -43,7 +43,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
 
         <Image
           className={
-            'body-hand opacity-0 w-[110px] transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-174%] translate-y-[204%] cursor-pointer'
+            'body-hand opacity-0 w-[110px] transition-opacity duration-500 absolute top-0 translate-x-[66%] translate-y-[234%] cursor-pointer'
           }
           src={Hand}
           alt={'hand'}
@@ -52,7 +52,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
 
       <Image
         className={
-          'body-statue opacity-0 w-[140px] transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-47%] translate-y-[210%] cursor-pointer'
+          'body-statue opacity-0 w-[140px] transition-opacity duration-500 absolute top-0 translate-x-[135%] translate-y-[240%] cursor-pointer'
         }
         src={Belly}
         alt={'belly'}
@@ -61,7 +61,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
 
       <Image
         className={
-          'body-statue opacity-0 w-[180px] transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-48%] translate-y-[243%] cursor-pointer'
+          'body-statue opacity-0 w-[180px] transition-opacity duration-500 absolute top-0 translate-x-[95%] translate-y-[273%] cursor-pointer'
         }
         src={Knees}
         alt={'knees'}
@@ -70,7 +70,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
 
       <Image
         className={
-          'body-statue opacity-0 w-[230px] transition-opacity duration-500 left-[17.5%] absolute top-0 transform translate-x-[-45%] translate-y-[602%] cursor-pointer'
+          'body-statue opacity-0 w-[230px] transition-opacity duration-500 absolute top-0 translate-x-[66%] translate-y-[662%] cursor-pointer'
         }
         src={Feet}
         alt={'feet'}
