@@ -14,8 +14,6 @@ body {
   box-sizing: border-box;
   overscroll-behavior: none;
   overflow: auto;
-  color: white;
-  background-color: black;
 }
 
 .image-container:hover .body-chest,

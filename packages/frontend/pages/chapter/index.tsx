@@ -20,7 +20,7 @@ const Chapter = () => {
   }, [data?.Chapters, identifier]);
 
   return (
-    <div className="flex bg-white h-screen text-black">
+    <div className="flex">
       <Statue setIdentifier={setIdentifier} />
       {selectedChapter && (
         <div key={selectedChapter.id} className="m-4 flex flex-col flex-[0.65]">
