@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import React, { memo } from 'react';
-import StatueImage from '../../public/assets/statue/statue.png';
-import Head from '../../public/assets/statue/head.png';
-import Chest from '../../public/assets/statue/chest.png';
-import Hand from '../../public/assets/statue/hand.png';
-import Belly from '../../public/assets/statue/belly.png';
-import Knees from '../../public/assets/statue/knees.png';
-import Feet from '../../public/assets/statue/feet.png';
 import { StatueIdentifiers } from '../../public/shared/identifiers';
+import {
+  Belly,
+  Chest,
+  Feet,
+  Hand,
+  Head,
+  Knees,
+  StatueImage,
+} from '../../public/assets';
 
 interface StatueProps {
   setIdentifier: (identifier: StatueIdentifiers) => void;

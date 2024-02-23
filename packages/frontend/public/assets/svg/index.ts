@@ -1,3 +1,4 @@
-import CheckCircle from './dot';
+import CalendarIcon from './calendar';
+import CheckCircleIcon from './checkCircle';
 
-export { CheckCircle };
+export { CheckCircleIcon, CalendarIcon  };

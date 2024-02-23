@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CheckCircle = ({ color = 'black', size = 24 }) => {
+const CheckCircleIcon = ({ color = 'black', size = 24 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,4 +14,4 @@ const CheckCircle = ({ color = 'black', size = 24 }) => {
   );
 };
 
-export default CheckCircle;
+export default CheckCircleIcon;

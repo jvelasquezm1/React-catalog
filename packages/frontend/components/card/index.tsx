@@ -9,7 +9,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ title, description, image }) => {
   return (
     <div
-      className="static left-0 top-0 z-[1055] block w-full overflow-y-auto overflow-x-hidden outline-none"
+      className="shadow static left-0 top-0 z-[1055] block w-full overflow-y-auto overflow-x-hidden outline-none"
       tabIndex={-1}
     >
       <div>
