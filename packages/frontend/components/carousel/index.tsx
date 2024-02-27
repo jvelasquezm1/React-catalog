@@ -3,6 +3,7 @@ import React, { memo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { useTranslation } from 'next-i18next';
 
 type CarouselProps = {
   setSlide: (index: number) => void;
@@ -33,6 +34,7 @@ const $Carousel: React.FC<CarouselProps> = ({
   length,
   titles,
 }) => {
+  const { t } = useTranslation();
   const router = useRouter();
 
   const slides = Array.from({ length }, (_, index) => ({
@@ -55,7 +57,7 @@ const $Carousel: React.FC<CarouselProps> = ({
         />
         {isCurrentSlide && (
           <p className="text-center mt-4">
-            Capitulo {titles ? titles[index] : index + 1}
+            {`${t('chapter')} ${titles ? titles[index] : index + 1}`}
           </p>
         )}
       </div>

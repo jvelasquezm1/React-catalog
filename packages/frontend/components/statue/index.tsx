@@ -45,7 +45,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
 
         <Image
           className={
-            'body-hand opacity-0 w-[110px] transition-opacity duration-500 absolute top-0 translate-x-[63%] translate-y-[234%] cursor-pointer'
+            'body-hand opacity-0 w-[110px] transition-opacity duration-500 absolute top-0 translate-x-[55%] translate-y-[249%] cursor-pointer'
           }
           src={Hand}
           alt={'hand'}

@@ -46,7 +46,14 @@ const Chapter1 = () => {
               />
               <HorizontalCard
                 title="Daniel y sus amigos"
-                description="En el caso de Daniel y sus amigos (Daniel 1:6-7), sus nombres hebreos originales tenían significados relacionados con Dios. Cambiar esos nombres por otros con significados asociados a los dioses babilónicos reflejaba la intención de redefinir su identidad religiosa y cultural en el contexto babilónico. Sin embargo, a lo largo del libro, Daniel y sus amigos continúan aferrándose a su fe en el Dios de Israel a pesar de los cambios impuestos en sus nombres y circunstancias."
+                description="En el caso de Daniel y sus amigos (Daniel 1:6-7),
+                    sus nombres hebreos originales tenían significados relacionados
+                    con Dios. Cambiar esos nombres por otros con significados 
+                    asociados a los dioses babilónicos reflejaba la intención
+                    de redefinir su identidad religiosa y cultural en el 
+                    contexto babilónico. Sin embargo, a lo largo del libro, 
+                    Daniel y sus amigos continúan aferrándose a su fe en el Dios 
+                    de Israel a pesar de los cambios impuestos en sus nombres y circunstancias."
                 imageSrc={Friends}
               />
             </div>
