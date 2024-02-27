@@ -22,6 +22,7 @@ const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
         className={'cursor-pointer w-[500px] h-[700px]'}
         src={StatueImage}
         alt={'statue'}
+        onClick={() => setIdentifier(StatueIdentifiers.HeavenKingdom)}
       />
       <Image
         className={

@@ -4,4 +4,5 @@ export enum StatueIdentifiers {
   Greece = 'GR',
   Rome = 'RO',
   DividedRome = 'RD',
+  HeavenKingdom = 'HK',
 }
