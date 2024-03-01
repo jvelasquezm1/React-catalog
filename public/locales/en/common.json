@@ -1,5 +1,7 @@
 {
   "greeting": "Hi",
+  "knowMore": "Know more",
+  "cancel": "Cancel",
   "chapter": "Chapter",
   "chapter1": {
     "title": "Daniel and His Friends in Babylon",

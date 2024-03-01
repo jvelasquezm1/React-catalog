@@ -1,24 +1,30 @@
-import React, { memo } from 'react';
+import React, { ReactNode, memo } from 'react';
 
 interface CardProps {
   title: string;
   description: string;
   image?: string;
+  className?: string;
+  footer?: ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, image }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  description,
+  image,
+  footer,
+  className,
+}) => {
   return (
     <div
-      className="shadow static left-0 top-0 z-[1055] block w-full overflow-y-auto overflow-x-hidden outline-none"
-      tabIndex={-1}
+      className={`flex flex-col shadow rounded-md static left-0 top-0 w-full overflow-y-auto overflow-x-hidden outline-none ${className}`}
     >
-      <div>
-        <div className="text-center border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
-          <h5>{title}</h5>
-        </div>
-        <div className="relative flex-auto p-4">{description}</div>
-        {image && <div>{image}</div>}
+      <div className="text-center border-b-2 border-neutral-100 border-opacity-100 p-4">
+        <h5>{title}</h5>
       </div>
+      <div className="relative flex-auto p-4">{description}</div>
+      {image && <div>{image}</div>}
+      {footer}
     </div>
   );
 };

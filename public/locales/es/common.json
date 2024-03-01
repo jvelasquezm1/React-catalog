@@ -1,5 +1,7 @@
 {
   "greeting": "Hola",
+  "knowMore": "Saber mas",
+  "cancel": "Cancelar",
   "chapter": "Capitulo",
   "chapter1": {
     "title": "Daniel y sus compañeros en Babilonia",
