@@ -4,9 +4,16 @@ import Statue from '../../../components/statue';
 import Modal from '../../../components/modal';
 import Card from '../../../components/card';
 import { StatueIdentifiers } from '../../../public/shared/identifiers';
-import { CalendarIcon } from '../../../public/assets';
+import {
+  BabylonMap,
+  CalendarIcon,
+  GreeceMap,
+  MedoPersiaMap,
+  RomeMap,
+} from '../../../public/assets';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -19,25 +26,37 @@ const Chapter2 = () => {
   const [identifier, setIdentifier] = useState(StatueIdentifiers.Babylon);
   const [openModal, setOpenModal] = useState(false);
 
+  const identifierToMap = {
+    [StatueIdentifiers.Babylon]: BabylonMap,
+    [StatueIdentifiers.MedoPersia]: MedoPersiaMap,
+    [StatueIdentifiers.Greece]: GreeceMap,
+    [StatueIdentifiers.Rome]: RomeMap,
+    [StatueIdentifiers.DividedRome]: GreeceMap,
+    [StatueIdentifiers.HeavenKingdom]: GreeceMap,
+  };
+
   return (
     <div className="flex">
       <Statue setIdentifier={setIdentifier} />
       {openModal && (
         <Modal setOpenModal={setOpenModal}>
-          <div className="ml-4 mt-0 text-left">
-            <h3
-              className="text-base font-semibold leading-6 text-gray-900"
-              id="modal-title"
-            >
-              Deactivate account
-            </h3>
-            <div className="mt-2">
-              <p className="text-sm text-gray-500">
-                Are you sure you want to deactivate your account? All of your
-                data will be permanently removed. This action cannot be undone.
-              </p>
-            </div>
-          </div>
+          <Card
+            className="h-[30rem]"
+            title={t(`chapter2.${identifier}.title`)}
+            description={t(`chapter2.${identifier}.description`)}
+            footer={
+              <div className="flex m-4">
+                <Image
+                  className={'w-[500px]'}
+                  src={identifierToMap[identifier]}
+                  alt={'statue'}
+                />
+                <span className="m-4">
+                  {t(`chapter2.${identifier}.description`)}
+                </span>
+              </div>
+            }
+          />
         </Modal>
       )}
       <div className="m-4 flex flex-col flex-[0.65]">
@@ -67,9 +86,7 @@ const Chapter2 = () => {
                       <div className="flex w-full bg-gray-200 h-0.5 "></div>
                     )}
                     <div
-                      className={`flex items-center shrink-0 cursor-pointer ${
-                        isIdSelected && 'cursor-pointer'
-                      }`}
+                      className={'flex items-center shrink-0 cursor-pointer'}
                       onClick={() => setIdentifier(id)}
                     >
                       <CalendarIcon

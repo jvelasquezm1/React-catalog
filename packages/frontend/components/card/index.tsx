@@ -3,7 +3,6 @@ import React, { ReactNode, memo } from 'react';
 interface CardProps {
   title: string;
   description: string;
-  image?: string;
   className?: string;
   footer?: ReactNode;
 }
@@ -11,7 +10,6 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({
   title,
   description,
-  image,
   footer,
   className,
 }) => {
@@ -23,7 +21,6 @@ const Card: React.FC<CardProps> = ({
         <h5>{title}</h5>
       </div>
       <div className="relative flex-auto p-4">{description}</div>
-      {image && <div>{image}</div>}
       {footer}
     </div>
   );
