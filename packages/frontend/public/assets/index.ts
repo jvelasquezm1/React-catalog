@@ -10,11 +10,22 @@ import {
   Rock,
   StatueImage,
 } from './statue';
-import { CalendarIcon, CheckCircleIcon } from './svg';
+import {
+  Book,
+  CalendarIcon,
+  CheckCircleIcon,
+  MapSVG,
+  Pen,
+  Symbols,
+} from './svg';
 
 export {
   CheckCircleIcon,
   CalendarIcon,
+  MapSVG,
+  Book,
+  Pen,
+  Symbols,
   Belly,
   Chest,
   Feet,

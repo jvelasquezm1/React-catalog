@@ -7,6 +7,7 @@ import { TFunction } from 'i18next';
 interface StatueProps {
   setIdentifier: (identifier: StatueIdentifiers) => void;
   t: TFunction<'translation', undefined>;
+  identifierSelected: StatueIdentifiers;
 }
 
 const identifierToMargin = {
@@ -18,14 +19,22 @@ const identifierToMargin = {
   [StatueIdentifiers.HeavenKingdom]: 'mt-28',
 };
 
-const Statue: React.FC<StatueProps> = ({ setIdentifier, t }) => {
+const Statue: React.FC<StatueProps> = ({
+  setIdentifier,
+  t,
+  identifierSelected,
+}) => {
   return (
     <div className="mt-8 flex p-4">
       <div className="flex flex-col">
         {Object.values(StatueIdentifiers).map((identifier) => (
           <div key={identifier} className="flex">
             <button
-              className={`border-b-gray-200 border-b-2 h-12 ${identifierToMargin[identifier]} rounded-lg p-4 w-64 z-20`}
+              className={`border-b-gray-200 border-b-2 h-12 ${
+                identifierToMargin[identifier]
+              } ${
+                identifier === identifierSelected && 'bg-gray-800 text-white'
+              } rounded-lg w-64 hover:bg-gray-600 hover:text-white z-10`}
               onClick={() => setIdentifier(identifier)}
             >
               <span>{t(`chapter2.${identifier}.title`)}</span>
