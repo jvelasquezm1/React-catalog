@@ -13,6 +13,9 @@ import {
   Book,
   Pen,
   Symbols,
+  BabylonTodayMap,
+  Heaven,
+  World,
 } from '../../../public/assets';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -44,8 +47,17 @@ const Chapter2 = () => {
     [StatueIdentifiers.MedoPersia]: MedoPersiaMap,
     [StatueIdentifiers.Greece]: GreeceMap,
     [StatueIdentifiers.Rome]: RomeMap,
-    [StatueIdentifiers.DividedRome]: GreeceMap,
-    [StatueIdentifiers.HeavenKingdom]: GreeceMap,
+    [StatueIdentifiers.DividedKingdom]: World,
+    [StatueIdentifiers.HeavenKingdom]: Heaven,
+  };
+
+  const identifierToTodayMap = {
+    [StatueIdentifiers.Babylon]: BabylonTodayMap,
+    [StatueIdentifiers.MedoPersia]: MedoPersiaMap,
+    [StatueIdentifiers.Greece]: GreeceMap,
+    [StatueIdentifiers.Rome]: RomeMap,
+    [StatueIdentifiers.DividedKingdom]: World,
+    [StatueIdentifiers.HeavenKingdom]: '',
   };
 
   const sectionIcons = {
@@ -70,11 +82,20 @@ const Chapter2 = () => {
           description={t(`chapter2.${identifier}.${selectedSection}`)}
           footer={
             selectedSection === SectionsChapter2.Maps && (
-              <Image
-                className={'w-[500px] m-4'}
-                src={identifierToMap[identifier]}
-                alt={'statue'}
-              />
+              <div className="flex m-4 space-x-4">
+                <Image
+                  className={'w-[48%]'}
+                  src={identifierToMap[identifier]}
+                  alt={`${identifier}.${selectedSection}`}
+                />
+                {identifierToTodayMap[identifier] && (
+                  <Image
+                    className={'w-[48%]'}
+                    src={identifierToTodayMap[identifier]}
+                    alt={`${identifier}.${selectedSection}2`}
+                  />
+                )}
+              </div>
             )
           }
         />

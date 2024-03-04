@@ -14,23 +14,16 @@ const Chapter1 = () => {
   const { t } = useTranslation();
   return (
     <div className="w-full">
-      <div id="defaultTabContent">
-        <div className="p-4 rounded-lg" id="about">
-          <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900">
+      <div>
+        <div className="p-4 rounded-lg">
+          <h2 className="mb-3 text-3xl font-extrabold">
             {t('chapter1.title')}
           </h2>
-          <p className="mb-3 text-gray-500 dark:text-gray-400">
-            {t('chapter1.description')}
-          </p>
+          <p className="mb-3">{t('chapter1.description')}</p>
         </div>
         <div className="p-4 rounded-lg">
-          <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-gray-900">
-            Datos interesantes
-          </h2>
-          <ul
-            role="list"
-            className="space-y-4 text-gray-500 dark:text-gray-400"
-          >
+          <h2 className="mb-5 text-2xl font-extrabold">Datos interesantes</h2>
+          <ul role="list" className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <HorizontalCard
                 title="Babilonia en el tiempo"

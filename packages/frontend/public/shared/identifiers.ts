@@ -3,6 +3,6 @@ export enum StatueIdentifiers {
   MedoPersia = 'MP',
   Greece = 'GR',
   Rome = 'RO',
-  DividedRome = 'RD',
+  DividedKingdom = 'RD',
   HeavenKingdom = 'HK',
 }

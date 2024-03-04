@@ -21,13 +21,9 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({
           alt={title}
         />
       )}
-      <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900">
-          {title}
-        </h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          {description}
-        </p>
+      <div className="flex flex-col justify-between p-4">
+        <h5 className="mb-2 text-lg font-bold">{title}</h5>
+        <p className="mb-3">{description}</p>
       </div>
     </div>
   );

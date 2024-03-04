@@ -15,7 +15,7 @@ const identifierToMargin = {
   [StatueIdentifiers.MedoPersia]: 'mt-16',
   [StatueIdentifiers.Greece]: 'mt-10',
   [StatueIdentifiers.Rome]: 'mt-6',
-  [StatueIdentifiers.DividedRome]: 'mt-8',
+  [StatueIdentifiers.DividedKingdom]: 'mt-8',
   [StatueIdentifiers.HeavenKingdom]: 'mt-28',
 };
 

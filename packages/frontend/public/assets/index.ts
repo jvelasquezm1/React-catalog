@@ -1,5 +1,11 @@
-import { Babylon, Friends } from './images';
-import { BabylonMap, GreeceMap, MedoPersiaMap, RomeMap } from './maps';
+import { Babylon, Friends, Heaven, World } from './images';
+import {
+  BabylonMap,
+  BabylonTodayMap,
+  GreeceMap,
+  MedoPersiaMap,
+  RomeMap,
+} from './maps';
 import {
   Belly,
   Chest,
@@ -36,8 +42,11 @@ export {
   Friends,
   Babylon,
   BabylonMap,
+  BabylonTodayMap,
   MedoPersiaMap,
   GreeceMap,
   RomeMap,
   Rock,
+  Heaven,
+  World,
 };
