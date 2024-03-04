@@ -14,6 +14,7 @@ import {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { SectionsChapter2 } from './sections';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -24,6 +25,9 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 const Chapter2 = () => {
   const { t } = useTranslation();
   const [identifier, setIdentifier] = useState(StatueIdentifiers.Babylon);
+  const [selectedSection, setSelectedSection] = useState(
+    SectionsChapter2.History
+  );
   const [openModal, setOpenModal] = useState(false);
 
   const identifierToMap = {
@@ -37,7 +41,7 @@ const Chapter2 = () => {
 
   return (
     <div className="flex">
-      <Statue setIdentifier={setIdentifier} />
+      <Statue setIdentifier={setIdentifier} t={t} />
       {openModal && (
         <Modal setOpenModal={setOpenModal}>
           <Card
@@ -59,7 +63,7 @@ const Chapter2 = () => {
           />
         </Modal>
       )}
-      <div className="m-4 flex flex-col flex-[0.65]">
+      <div className="m-4 flex flex-col">
         <Card
           className="h-[30rem]"
           title={t(`chapter2.${identifier}.title`)}
@@ -76,38 +80,34 @@ const Chapter2 = () => {
           }
         />
         <div className="mt-auto mb-16">
-          <ol className="items-center flex justify-between">
-            {Object.values(StatueIdentifiers).map((id) => {
-              const isIdSelected = identifier === id;
+          <ol className="mt-12 items-center flex justify-between">
+            {Object.values(SectionsChapter2).map((section) => {
+              const isSectionSelected = selectedSection === section;
               return (
-                <li key={id} className="relative mb-6 flex-1">
+                <li key={section} className="relative mb-6 flex-1">
                   <div className="flex items-center">
-                    {id === StatueIdentifiers.HeavenKingdom && (
-                      <div className="flex w-full bg-gray-200 h-0.5 "></div>
-                    )}
                     <div
-                      className={'flex items-center shrink-0 cursor-pointer'}
-                      onClick={() => setIdentifier(id)}
+                      className={
+                        'flex w-full items-center shrink-0 cursor-pointer'
+                      }
+                      onClick={() => setSelectedSection(section)}
                     >
                       <CalendarIcon
                         className={`${
-                          isIdSelected
+                          isSectionSelected
                             ? 'h-8 w-8 fill-black hover:fill-slate-600'
                             : 'h-6 w-6 fill-gray-500'
                         }`}
                       />
+                      <div className="flex bg-gray-200 w-full h-0.5 " />
                     </div>
-
-                    {id !== StatueIdentifiers.HeavenKingdom && (
-                      <div className="flex w-full bg-gray-200 h-0.5 "></div>
-                    )}
                   </div>
                   <div className="mt-3">
                     <h3 className="font-semibold text-gray-900">
-                      {t(`chapter2.${id}.title`)}
+                      {t(`chapter2.${section}`)}
                     </h3>
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 ">
-                      {t(`chapter2.${id}.years`)}
+                      {t(`chapter2.${section}`)}
                     </time>
                   </div>
                 </li>

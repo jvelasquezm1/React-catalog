@@ -1,83 +1,43 @@
 import Image from 'next/image';
 import React, { memo } from 'react';
 import { StatueIdentifiers } from '../../public/shared/identifiers';
-import {
-  Belly,
-  Chest,
-  Feet,
-  Hand,
-  Head,
-  Knees,
-  StatueImage,
-} from '../../public/assets';
+import { Rock, StatueImage } from '../../public/assets';
+import { TFunction } from 'i18next';
 
 interface StatueProps {
   setIdentifier: (identifier: StatueIdentifiers) => void;
+  t: TFunction<'translation', undefined>;
 }
 
-const Statue: React.FC<StatueProps> = ({ setIdentifier }) => {
+const identifierToMargin = {
+  [StatueIdentifiers.Babylon]: 'mt-8',
+  [StatueIdentifiers.MedoPersia]: 'mt-16',
+  [StatueIdentifiers.Greece]: 'mt-10',
+  [StatueIdentifiers.Rome]: 'mt-6',
+  [StatueIdentifiers.DividedRome]: 'mt-8',
+  [StatueIdentifiers.HeavenKingdom]: 'mt-28',
+};
+
+const Statue: React.FC<StatueProps> = ({ setIdentifier, t }) => {
   return (
-    <div className="mt-8 flex-[0.35]">
-      <Image
-        className={'w-[500px] h-[700px]'}
-        src={StatueImage}
-        alt={'statue'}
-      />
-      <Image
-        className={
-          'body-statue w-[120px] opacity-0 transition-opacity duration-500 absolute top-0 translate-x-[143%] translate-y-[45%] cursor-pointer'
-        }
-        src={Head}
-        alt={'head'}
-        onClick={() => setIdentifier(StatueIdentifiers.Babylon)}
-      />
-      <div
-        className="image-container"
-        onClick={() => setIdentifier(StatueIdentifiers.MedoPersia)}
-      >
-        <Image
-          className={
-            'body-chest  opacity-0 w-[400px] transition-opacity duration-500 absolute top-0 translate-x-[23%] translate-y-[120%] cursor-pointer'
-          }
-          src={Chest}
-          alt={'chest'}
-        />
-
-        <Image
-          className={
-            'body-hand opacity-0 w-[110px] transition-opacity duration-500 absolute top-0 translate-x-[55%] translate-y-[249%] cursor-pointer'
-          }
-          src={Hand}
-          alt={'hand'}
-        />
+    <div className="mt-8 flex p-4">
+      <div className="flex flex-col">
+        {Object.values(StatueIdentifiers).map((identifier) => (
+          <div key={identifier} className="flex">
+            <button
+              className={`border-b-gray-200 border-b-2 h-12 ${identifierToMargin[identifier]} rounded-lg p-4 w-64 z-20`}
+              onClick={() => setIdentifier(identifier)}
+            >
+              <span>{t(`chapter2.${identifier}.title`)}</span>
+            </button>
+            <div className="flex mt-auto mr-[-10rem] mb-8 w-full bg-gray-200 h-0.5 " />
+          </div>
+        ))}
       </div>
-
-      <Image
-        className={
-          'body-statue opacity-0 w-[140px] transition-opacity duration-500 absolute top-0 translate-x-[132%] translate-y-[240%] cursor-pointer'
-        }
-        src={Belly}
-        alt={'belly'}
-        onClick={() => setIdentifier(StatueIdentifiers.Greece)}
-      />
-
-      <Image
-        className={
-          'body-statue opacity-0 w-[180px] transition-opacity duration-500 absolute top-0 translate-x-[92%] translate-y-[273%] cursor-pointer'
-        }
-        src={Knees}
-        alt={'knees'}
-        onClick={() => setIdentifier(StatueIdentifiers.Rome)}
-      />
-
-      <Image
-        className={
-          'body-statue opacity-0 w-[230px] transition-opacity duration-500 absolute top-0 translate-x-[63%] translate-y-[662%] cursor-pointer'
-        }
-        src={Feet}
-        alt={'feet'}
-        onClick={() => setIdentifier(StatueIdentifiers.DividedRome)}
-      />
+      <div className="w-96">
+        <Image src={StatueImage} alt={'statue'} />
+        <Image src={Rock} alt={'rock'} className="w-52 m-auto" />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,15 @@
 import { Babylon, Friends } from './images';
 import { BabylonMap, GreeceMap, MedoPersiaMap, RomeMap } from './maps';
-import { Belly, Chest, Feet, Hand, Head, Knees, StatueImage } from './statue';
+import {
+  Belly,
+  Chest,
+  Feet,
+  Hand,
+  Head,
+  Knees,
+  Rock,
+  StatueImage,
+} from './statue';
 import { CalendarIcon, CheckCircleIcon } from './svg';
 
 export {
@@ -19,4 +28,5 @@ export {
   MedoPersiaMap,
   GreeceMap,
   RomeMap,
+  Rock,
 };
