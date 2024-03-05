@@ -115,8 +115,8 @@ const Chapter2 = () => {
                       <IconComponent
                         className={`${
                           isSectionSelected
-                            ? 'h-10 w-10 fill-white'
-                            : 'h-6 w-6 fill-gray-200 hover:fill-white'
+                            ? 'h-10 w-10 fill-white stroke-black'
+                            : 'h-6 w-6 fill-gray-200 hover:fill-white stroke-black'
                         }`}
                       />
                       <div className="flex bg-gray-200 w-full h-0.5 " />

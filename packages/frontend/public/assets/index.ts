@@ -20,8 +20,12 @@ import {
   Book,
   CalendarIcon,
   CheckCircleIcon,
+  DownArrow,
+  Home,
   MapSVG,
+  Menu,
   Pen,
+  RightArrow,
   Symbols,
 } from './svg';
 
@@ -32,6 +36,10 @@ export {
   Book,
   Pen,
   Symbols,
+  Menu,
+  Home,
+  DownArrow,
+  RightArrow,
   Belly,
   Chest,
   Feet,
