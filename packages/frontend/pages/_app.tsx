@@ -9,6 +9,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SideMenuItem, { RevelationChapters } from '../components/sideMenuItem';
 import { Home, Menu } from '../public/assets';
 import { useRouter } from 'next/router';
+import LanguageSwitcher from '../components/languageSwitcher';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -35,10 +36,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
 
       {isSideMenuOpen && (
-        <div
-          className="text-white fixed w-52 top-0 bottom-0 left-0 bg-slate-900 z-20 overflow-auto"
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div className="text-white fixed w-52 top-0 bottom-0 left-0 bg-slate-900 z-20 overflow-auto">
           <Link
             href="/"
             className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
@@ -68,13 +66,14 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </div>
       )}
       <div className="flex flex-col">
-        <nav className="bg-slate-900 text-white fixed top-0 bottom-3 w-full h-12 z-20">
+        <nav className="flex justify-between bg-slate-900 text-white fixed top-0 bottom-3 w-full h-12 z-20">
           <button
             className="center h-full p-2"
             onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
           >
             <Menu className="stroke-white h-6" />
           </button>
+          <LanguageSwitcher />
         </nav>
 
         <main

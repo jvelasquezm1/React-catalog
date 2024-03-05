@@ -2,6 +2,7 @@ import React, { memo, useState } from 'react';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Carousel from '../components/carousel';
+import { useTranslation } from 'next-i18next';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -12,15 +13,16 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 const Home = () => {
   const [danielSlide, setDanielSlide] = useState(0);
   const [revelationsSlide, setRevelationsSlide] = useState(0);
+  const { t } = useTranslation();
 
   return (
-    <div className="space-y-10">
+    <div>
       <Carousel
         setSlide={setDanielSlide}
         slide={danielSlide}
         book={'daniel'}
         length={12}
-        title={'El libro de Daniel'}
+        title={t('bookOfDaniel')}
       />
       <Carousel
         setSlide={setRevelationsSlide}
@@ -36,7 +38,7 @@ const Home = () => {
           '17 - 20',
           '21 - 22',
         ]}
-        title={'El libro de apocalipsis'}
+        title={t('bookOfRevelation')}
       />
     </div>
   );

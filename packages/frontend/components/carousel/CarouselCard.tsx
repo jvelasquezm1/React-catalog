@@ -46,17 +46,17 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
       index + 1
     }.jpeg`);
     const content = (
-      <div className="w-60 h-60 cursor-pointer">
+      <div className="cursor-pointer">
         <Image
-          className={`rounded-3xl h-full w-full${
-            isCurrentSlide ? 'hover:scale-110 transition-transform ' : ''
+          className={`rounded-3xl h-60 w-60 ${
+            isCurrentSlide && 'hover:scale-110 transition-transform'
           }`}
           style={{ objectFit: 'cover' }}
           src={chapterImage}
           alt={index.toString()}
         />
         {isCurrentSlide && (
-          <p className="text-center mt-4">
+          <p className="text-center mt-4 text-white">
             {`${t('chapter')} ${titles ? titles[index] : index + 1}`}
           </p>
         )}
