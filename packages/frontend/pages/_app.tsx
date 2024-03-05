@@ -36,14 +36,14 @@ function CustomApp({ Component, pageProps }: AppProps) {
 
       {isSideMenuOpen && (
         <div
-          className="text-white fixed w-52 top-0 bottom-0 left-0 bg-black z-20 overflow-auto"
+          className="text-white fixed w-52 top-0 bottom-0 left-0 bg-slate-900 z-20 overflow-auto"
           onClick={(e) => e.stopPropagation()}
         >
           <Link
             href="/"
             className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
-              router.pathname === '/' && 'text-white bg-black'
-            } hover:text-white hover:bg-black cursor-pointer flex`}
+              router.pathname === '/' && 'text-white bg-slate-900'
+            } hover:text-white hover:bg-slate-900 cursor-pointer flex`}
           >
             <Home className="stroke-white h-6 w-6 fill-white mr-4" />
             <span>Home</span>
@@ -68,7 +68,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </div>
       )}
       <div className="flex flex-col">
-        <nav className="bg-black text-white fixed top-0 bottom-3 w-full h-12 border-b z-20">
+        <nav className="bg-slate-900 text-white fixed top-0 bottom-3 w-full h-12 z-20">
           <button
             className="center h-full p-2"
             onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
@@ -78,7 +78,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </nav>
 
         <main
-          className="app mt-14"
+          className="app mt-12"
           onClick={() => isSideMenuOpen && setIsSideMenuOpen(false)}
         >
           <ApolloProvider client={client}>
