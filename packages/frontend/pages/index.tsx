@@ -5,7 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations('es', ['common'])),
+    ...(await serverSideTranslations(locale, ['common'])),
   },
 });
 
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <div className="flex m-8">
-        <h2 className="flex-[0.25] text-center uppercase self-center">
+        <h2 className="flex-[0.25] text-center self-center">
           El libro de Daniel
         </h2>
         <div className="flex-[0.5] h-72 m-auto">
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex m-8">
-        <h2 className="flex-[0.25] text-center uppercase self-center">
+        <h2 className="flex-[0.25] text-center self-center">
           El libro de apocalipsis
         </h2>
         <div className="flex-[0.5] h-72 m-auto">

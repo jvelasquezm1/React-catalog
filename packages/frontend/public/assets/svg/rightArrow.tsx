@@ -9,9 +9,9 @@ const RightArrow = ({ className }: { className?: string }) => {
     >
       <path
         d="M10 7L15 12L10 17"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

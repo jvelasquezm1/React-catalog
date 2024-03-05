@@ -3,11 +3,21 @@ import { Book, DownArrow, RightArrow } from '../../public/assets';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+export enum RevelationChapters {
+  Letters = 'letters',
+  Seals = 'seals',
+  Trumpets = 'trumpets',
+  WomanAndDragon = 'womanAndDragon',
+  Bowls = 'bowls',
+  GreatHarlot = 'greatHarlot',
+  FinalTriumph = 'finalTriumph',
+}
+
 interface SideMenuItemProps {
   label: string;
   onClick: () => void;
   isOpen: boolean;
-  chapters: number[];
+  chapters: (RevelationChapters | string)[];
   basePath: string;
   route: string;
   className?: string;
@@ -40,7 +50,7 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
         )}
       </button>
       {isOpen &&
-        chapters.map((_, index) => (
+        chapters.map((chapter, index) => (
           <Link
             key={index}
             className={`block p-2 pl-6 w-full text-gray-400 text-sm ${
@@ -49,7 +59,7 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
             } hover:text-white hover:bg-black`}
             href={`${basePath}/chapter${index + 1}`}
           >
-            {`${t('chapter')} ${index + 1}`}
+            {chapter ? t(chapter) : `${t('chapter')} ${index + 1}`}
           </Link>
         ))}
     </div>

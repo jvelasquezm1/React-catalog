@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import SideMenuItem from '../components/sideMenuItem';
+import SideMenuItem, { RevelationChapters } from '../components/sideMenuItem';
 import { Home, Menu } from '../public/assets';
 import { useRouter } from 'next/router';
 
@@ -61,7 +61,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
             label={t('revelation')}
             onClick={() => setDisplayRevelation(!displayRevelation)}
             isOpen={displayRevelation}
-            chapters={Array.from({ length: 7 })}
+            chapters={Object.values(RevelationChapters)}
             basePath="/revelation"
             route={router.pathname}
           />
