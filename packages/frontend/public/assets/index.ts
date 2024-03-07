@@ -1,4 +1,4 @@
-import { Babylon, Friends, Heaven, World } from './images';
+import { Babylon, BackgroundGold, Friends, Heaven, World } from './images';
 import {
   BabylonMap,
   BabylonTodayMap,
@@ -57,4 +57,5 @@ export {
   Rock,
   Heaven,
   World,
+  BackgroundGold,
 };

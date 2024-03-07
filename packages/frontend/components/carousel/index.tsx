@@ -21,10 +21,10 @@ const Carousel: React.FC<CarouselProps> = ({
 }) => {
   return (
     <div className="flex flex-col">
-      <h2 className="text-center uppercase self-center text-xl text-white w-full bg-slate-800 p-8 font-serif">
+      <h2 className="text-center uppercase self-center text-xl w-full p-8 font-serif">
         {title}
       </h2>
-      <div className="bg-slate-700">
+      <div>
         <div className="h-72 m-auto w-[40rem] mt-4 mb-4">
           <CarouselCard
             setSlide={setSlide}
