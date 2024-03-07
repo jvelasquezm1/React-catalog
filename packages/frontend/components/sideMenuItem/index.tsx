@@ -37,9 +37,9 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
   return (
     <div className={className}>
       <button
-        className={`pl-4 pr-4 p-2 block w-full text-left font-semibold text-white ${
-          route.includes(basePath) && 'text-white bg-slate-900'
-        } hover:text-white hover:bg-slate-900 cursor-pointer flex`}
+        className={`pl-4 pr-4 p-2 block w-full text-left font-semibold ${
+          route.includes(basePath) && 'bg-slate-900'
+        } hover:bg-slate-900 cursor-pointer flex`}
         onClick={onClick}
       >
         <Book className="stroke-white h-6 w-6 fill-white mr-4" />
@@ -54,10 +54,9 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
         chapters.map((chapter, index) => (
           <Link
             key={index}
-            className={`block p-2 pl-6 w-full text-gray-400 text-sm ${
-              route === `${basePath}/chapter${index + 1}` &&
-              'text-white bg-slate-900'
-            } hover:text-white hover:bg-slate-900`}
+            className={`block p-2 pl-6 w-full text-sm ${
+              route === `${basePath}/chapter${index + 1}` && 'bg-slate-900'
+            } hover:bg-slate-900`}
             href={`${basePath}/chapter${index + 1}`}
           >
             {chapter ? t(chapter) : `${t('chapter')} ${index + 1}`}

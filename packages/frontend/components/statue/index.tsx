@@ -33,8 +33,8 @@ const Statue: React.FC<StatueProps> = ({
               className={`border-b-gray-200 border-b-2 h-12 ${
                 identifierToMargin[identifier]
               } ${
-                identifier === identifierSelected && 'bg-gray-800 text-white'
-              } rounded-lg w-64 hover:bg-gray-600 hover:text-white z-10`}
+                identifier === identifierSelected && 'bg-gray-800'
+              } rounded-lg w-64 hover:bg-gray-600 z-10`}
               onClick={() => setIdentifier(identifier)}
             >
               <span>{t(`chapter2.${identifier}.title`)}</span>

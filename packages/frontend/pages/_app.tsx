@@ -37,12 +37,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
 
       {isSideMenuOpen && (
-        <div className="text-white fixed w-52 top-0 bottom-0 left-0 bg-slate-700 z-20 overflow-auto">
+        <div className="fixed w-52 top-0 bottom-0 left-0 bg-slate-700 z-20 overflow-auto">
           <Link
             href="/"
             className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
-              router.pathname === '/' && 'text-white bg-slate-700'
-            } hover:text-white hover:bg-slate-700 cursor-pointer flex`}
+              router.pathname === '/' && 'bg-slate-700'
+            } hover:bg-slate-700 cursor-pointer flex`}
           >
             <Home className="stroke-white h-6 w-6 fill-white mr-4" />
             <span>{t('home')}</span>
@@ -69,14 +69,18 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </div>
       )}
       <div className="flex flex-col">
-        <nav className=" flex justify-between bg-slate-700 bg-opacity-40 text-white fixed top-0 bottom-3 w-full h-12 z-20">
-          <button
-            className="center h-full p-2"
-            onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
-          >
-            <Menu className="stroke-white h-6" />
-          </button>
-          <Breadcrumbs t={t} />
+        <nav className="flex justify-between bg-slate-700 fixed top-0 bottom-3 w-full h-12 z-20">
+          <div className="flex items-center">
+            <button
+              className={`center h-full p-2 ${
+                isSideMenuOpen ? 'mr-48' : 'mr-[1rem]'
+              }`}
+              onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
+            >
+              <Menu className="stroke-white h-6" />
+            </button>
+            <Breadcrumbs t={t} />
+          </div>
           <LanguageSwitcher />
         </nav>
 

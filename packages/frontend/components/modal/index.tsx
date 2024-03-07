@@ -53,14 +53,14 @@ const Modal: React.FC<ModalProps> = ({
               {buttonTitle && buttonAction && (
                 <button
                   onClick={() => buttonAction()}
-                  className="inline-flex justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 ml-3 w-auto"
+                  className="inline-flex justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold  shadow-sm hover:bg-red-500 ml-3 w-auto"
                 >
                   {buttonTitle}
                 </button>
               )}
               <button
                 onClick={() => setOpenModal(false)}
-                className="inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 mt-0 w-auto"
+                className="inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 mt-0 w-auto"
               >
                 {t('cancel')}
               </button>

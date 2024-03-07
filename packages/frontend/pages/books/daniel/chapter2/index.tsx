@@ -75,10 +75,44 @@ const Chapter2 = () => {
         t={t}
         identifierSelected={identifier}
       />
-      <div className="m-4 flex flex-col">
+      <div className="m-4 flex flex-col bg-white text-black p-8 rounded-md space-y-4">
+        <span className="text-lg font-semibold border-b-2 pb-4 text-center">
+          {t(`chapter2.${identifier}.title`)}
+        </span>
+        <ol className="items-center flex justify-between border-b-2 pb-4">
+          {Object.values(SectionsChapter2).map((section) => {
+            const isSectionSelected = selectedSection === section;
+            const IconComponent = sectionIcons[section];
+            return (
+              <li
+                key={section}
+                className="relative flex-1 cursor-pointer"
+                onClick={() => setSelectedSection(section)}
+              >
+                <div className="flex items-center">
+                  <div className={'flex w-full items-center shrink-0'}>
+                    <IconComponent
+                      className={`${
+                        isSectionSelected
+                          ? 'h-10 w-10 fill-white stroke-black'
+                          : 'h-6 w-6 fill-gray-200 hover:fill-white stroke-black'
+                      }`}
+                    />
+                    <div className="flex bg-gray-200 w-full h-0.5 " />
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <h3 className="font-semibold">{t(`chapter2.${section}`)}</h3>
+                  <time className="block mb-2 text-sm font-normal leading-none">
+                    {t(`chapter2.${section}`)}
+                  </time>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
         <Card
           className="h-[30rem]"
-          title={t(`chapter2.${identifier}.title`)}
           description={t(`chapter2.${identifier}.${selectedSection}`)}
           footer={
             selectedSection === SectionsChapter2.Maps && (
@@ -99,42 +133,6 @@ const Chapter2 = () => {
             )
           }
         />
-        <div className="mt-auto mb-16">
-          <ol className="mt-12 items-center flex justify-between">
-            {Object.values(SectionsChapter2).map((section) => {
-              const isSectionSelected = selectedSection === section;
-              const IconComponent = sectionIcons[section];
-              return (
-                <li
-                  key={section}
-                  className="relative mb-6 flex-1 cursor-pointer"
-                  onClick={() => setSelectedSection(section)}
-                >
-                  <div className="flex items-center">
-                    <div className={'flex w-full items-center shrink-0'}>
-                      <IconComponent
-                        className={`${
-                          isSectionSelected
-                            ? 'h-10 w-10 fill-white stroke-black'
-                            : 'h-6 w-6 fill-gray-200 hover:fill-white stroke-black'
-                        }`}
-                      />
-                      <div className="flex bg-gray-200 w-full h-0.5 " />
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                    <h3 className="font-semibold text-gray-900">
-                      {t(`chapter2.${section}`)}
-                    </h3>
-                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 ">
-                      {t(`chapter2.${section}`)}
-                    </time>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
       </div>
     </div>
   );

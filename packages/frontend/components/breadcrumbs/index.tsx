@@ -31,28 +31,24 @@ const Breadcrumbs = ({ t }: { t: TFunction<'translation', undefined> }) => {
   const segments = getPathSegments();
 
   return (
-    <div className="ml-4 mt-2">
-      <Link
-        href="/"
-        className="text-white hover:text-gray-50 hover:font-semibold"
-      >
+    <>
+      <Link href="/" className="hover:font-semibold">
         {t('home')}
       </Link>
       {segments.map((segment, index) => {
         return (
           <span key={index}>
-            {segment.label && (
-              <Link
-                href={segment.path}
-                className="text-white hover:text-gray-50 hover:font-semibold"
-              >
+            {index === segments.length - 1 ? (
+              <span className="font-bold">{` > ${t(segment.label)}`}</span>
+            ) : (
+              <Link href={segment.path} className="hover:font-semibold">
                 {` > ${t(segment.label)}`}
               </Link>
             )}
           </span>
         );
       })}
-    </div>
+    </>
   );
 };
 
