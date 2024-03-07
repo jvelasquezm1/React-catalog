@@ -1,8 +1,8 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import Carousel from '../../../components/carousel';
+import CarouselCard from '../../../components/carouselCard';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -11,19 +11,17 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 });
 
 const Daniel = () => {
-  const [slide, setSlide] = useState(0);
   const { t } = useTranslation();
 
   return (
-    <div>
-      <Carousel
-        setSlide={setSlide}
-        slide={slide}
-        book={'daniel'}
-        length={12}
-        title={t('bookOfDaniel')}
-      />
-    </div>
+    <CarouselCard
+      title={t('bookOfDaniel')}
+      description={
+        'Daniel, el profeta sabio, narra sueños y visiones divinas, desentrañando el futuro con claridad. Desde la férrea fe en la adversidad hasta la victoria final del bien sobre el mal, Daniel es un faro de esperanza y sabiduría en el tejido de la historia bíblica y la humanidad.'
+      }
+      book={'daniel'}
+      numberOfChapters={12}
+    />
   );
 };
 

@@ -33,7 +33,7 @@ const Breadcrumbs = ({ t }: { t: TFunction<'translation', undefined> }) => {
   return (
     <div className="ml-4 mt-2">
       <Link
-        href=""
+        href="/"
         className="text-white hover:text-gray-50 hover:font-semibold"
       >
         {t('home')}
@@ -41,15 +41,12 @@ const Breadcrumbs = ({ t }: { t: TFunction<'translation', undefined> }) => {
       {segments.map((segment, index) => {
         return (
           <span key={index}>
-            {index > 0 && <span className="mx-2">{'>'}</span>}
-            {index === segments.length - 1 ? (
-              <span className="text-white font-bold">{t(segment.label)}</span>
-            ) : (
+            {segment.label && (
               <Link
                 href={segment.path}
                 className="text-white hover:text-gray-50 hover:font-semibold"
               >
-                {t(segment.label)}
+                {` > ${t(segment.label)}`}
               </Link>
             )}
           </span>
