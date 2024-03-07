@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import HorizontalCard from '../../../components/horizontalCard';
-import { Babylon, Friends } from '../../../public/assets';
+import HorizontalCard from '../../../../components/horizontalCard';
+import { Babylon, Friends } from '../../../../public/assets';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {

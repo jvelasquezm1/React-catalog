@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Book, DownArrow, RightArrow } from '../../public/assets';
 import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
 
 export enum RevelationChapters {
   Letters = 'letters',
@@ -21,6 +21,7 @@ interface SideMenuItemProps {
   basePath: string;
   route: string;
   className?: string;
+  t: TFunction<'translation', undefined>;
 }
 
 const SideMenuItem: React.FC<SideMenuItemProps> = ({
@@ -31,8 +32,8 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
   basePath,
   route,
   className,
+  t,
 }) => {
-  const { t } = useTranslation();
   return (
     <div className={className}>
       <button

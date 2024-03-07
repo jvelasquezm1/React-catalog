@@ -19,7 +19,7 @@ const Books = () => {
         className={`flex-1 bg-[url('../public/assets/images/lion.jpeg')] text-center bg-cover bg-center`}
       >
         <Card
-          link={'/daniel'}
+          link={'/books/daniel'}
           description={
             'Daniel en la Biblia revela profecías intrigantes que abordan eventos futuros y establecen lecciones intemporales. Sus visiones proféticas ofrecen perspectivas sobre el presente, inspirando confianza y reflexión en la búsqueda de un significado más profundo en nuestra vida actual.'
           }
@@ -31,7 +31,7 @@ const Books = () => {
         className={`flex-1 bg-[url('../public/assets/images/horse.jpeg')] text-center bg-cover bg-center`}
       >
         <Card
-          link={'/revelation'}
+          link={'/books/revelation'}
           description={
             'El Apocalipsis, último libro de la Biblia, desentraña visiones apocalípticas. Revela simbolismos, anticipa eventos finales y promete esperanza. Su mensaje trasciende épocas, ofreciendo guía y consuelo para los desafíos contemporáneos'
           }

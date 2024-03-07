@@ -10,6 +10,7 @@ import SideMenuItem, { RevelationChapters } from '../components/sideMenuItem';
 import { Home, Menu } from '../public/assets';
 import { useRouter } from 'next/router';
 import LanguageSwitcher from '../components/languageSwitcher';
+import Breadcrumbs from '../components/breadcrumbs';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -44,7 +45,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
             } hover:text-white hover:bg-slate-700 cursor-pointer flex`}
           >
             <Home className="stroke-white h-6 w-6 fill-white mr-4" />
-            <span>Home</span>
+            <span>{t('home')}</span>
           </Link>
 
           <SideMenuItem
@@ -52,16 +53,18 @@ function CustomApp({ Component, pageProps }: AppProps) {
             onClick={() => setDisplayDaniel(!displayDaniel)}
             isOpen={displayDaniel}
             chapters={Array.from({ length: 12 })}
-            basePath="/daniel"
+            basePath="/books/daniel"
             route={router.pathname}
+            t={t}
           />
           <SideMenuItem
             label={t('revelation')}
             onClick={() => setDisplayRevelation(!displayRevelation)}
             isOpen={displayRevelation}
             chapters={Object.values(RevelationChapters)}
-            basePath="/revelation"
+            basePath="/books/revelation"
             route={router.pathname}
+            t={t}
           />
         </div>
       )}
@@ -73,6 +76,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           >
             <Menu className="stroke-white h-6" />
           </button>
+          <Breadcrumbs t={t} />
           <LanguageSwitcher />
         </nav>
 

@@ -1,8 +1,8 @@
 import React, { memo, useState } from 'react';
 
-import Statue from '../../../components/statue';
-import Card from '../../../components/card';
-import { StatueIdentifiers } from '../../../public/shared/identifiers';
+import Statue from '../../../../components/statue';
+import Card from '../../../../components/card';
+import { StatueIdentifiers } from '../../../../public/shared/identifiers';
 import {
   BabylonMap,
   CalendarIcon,
@@ -16,7 +16,7 @@ import {
   BabylonTodayMap,
   Heaven,
   World,
-} from '../../../public/assets';
+} from '../../../../public/assets';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
