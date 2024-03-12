@@ -1,4 +1,13 @@
-import { Babylon, Friends, Heaven, Horse, Lion, World } from './images';
+import {
+  Babylon,
+  FireStatue,
+  Friends,
+  Furnace,
+  Heaven,
+  Horse,
+  Lion,
+  World,
+} from './images';
 import {
   BabylonMap,
   BabylonTodayMap,
@@ -59,4 +68,6 @@ export {
   World,
   Lion,
   Horse,
+  Furnace,
+  FireStatue,
 };

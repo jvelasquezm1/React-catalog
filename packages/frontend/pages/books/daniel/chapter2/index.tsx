@@ -69,70 +69,79 @@ const Chapter2 = () => {
   };
 
   return (
-    <div className="flex">
-      <Statue
-        setIdentifier={setIdentifier}
-        t={t}
-        identifierSelected={identifier}
-      />
-      <div className="m-4 flex flex-col bg-white text-black p-8 rounded-md space-y-4">
-        <span className="text-lg font-semibold border-b-2 pb-4 text-center">
-          {t(`chapter2.${identifier}.title`)}
-        </span>
-        <ol className="items-center flex justify-between border-b-2 pb-4">
-          {Object.values(SectionsChapter2).map((section) => {
-            const isSectionSelected = selectedSection === section;
-            const IconComponent = sectionIcons[section];
-            return (
-              <li
-                key={section}
-                className="relative flex-1 cursor-pointer"
-                onClick={() => setSelectedSection(section)}
-              >
-                <div className="flex items-center">
-                  <div className={'flex w-full items-center shrink-0'}>
-                    <IconComponent
-                      className={`${
-                        isSectionSelected
-                          ? 'h-10 w-10 fill-white stroke-black'
-                          : 'h-6 w-6 fill-gray-200 hover:fill-white stroke-black'
-                      }`}
-                    />
-                    <div className="flex bg-gray-200 w-full h-0.5 " />
+    <div className="p-4">
+      <h2 className="mb-3 text-3xl font-extrabold text-center pb-4 border-b">
+        {t('danielBook.chapter2.title')}
+      </h2>
+      <div className="flex">
+        <Statue
+          setIdentifier={setIdentifier}
+          t={t}
+          identifierSelected={identifier}
+        />
+        <div className="m-4 flex flex-col bg-white text-black p-8 rounded-md space-y-4">
+          <span className="text-lg font-semibold border-b-2 pb-4 text-center">
+            {t(`danielBook.propheticChapter.${identifier}.title`)}
+          </span>
+          <ol className="items-center flex justify-between border-b-2 pb-4">
+            {Object.values(SectionsChapter2).map((section) => {
+              const isSectionSelected = selectedSection === section;
+              const IconComponent = sectionIcons[section];
+              return (
+                <li
+                  key={section}
+                  className="relative flex-1 cursor-pointer"
+                  onClick={() => setSelectedSection(section)}
+                >
+                  <div className="flex items-center">
+                    <div className={'flex w-full items-center shrink-0'}>
+                      <IconComponent
+                        className={`${
+                          isSectionSelected
+                            ? 'h-10 w-10 fill-white stroke-black'
+                            : 'h-6 w-6 fill-gray-200 hover:fill-white stroke-black'
+                        }`}
+                      />
+                      <div className="flex bg-gray-200 w-full h-0.5 " />
+                    </div>
                   </div>
-                </div>
-                <div className="mt-3">
-                  <h3 className="font-semibold">{t(`chapter2.${section}`)}</h3>
-                  <time className="block mb-2 text-sm font-normal leading-none">
-                    {t(`chapter2.${section}`)}
-                  </time>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
-        <Card
-          className="h-[30rem]"
-          description={t(`chapter2.${identifier}.${selectedSection}`)}
-          footer={
-            selectedSection === SectionsChapter2.Maps && (
-              <div className="flex m-4 space-x-4">
-                <Image
-                  className={'w-[48%]'}
-                  src={identifierToMap[identifier]}
-                  alt={`${identifier}.${selectedSection}`}
-                />
-                {identifierToTodayMap[identifier] && (
+                  <div className="mt-3">
+                    <h3 className="font-semibold">
+                      {t(`danielBook.propheticChapter.${section}`)}
+                    </h3>
+                    <time className="block mb-2 text-sm font-normal leading-none">
+                      {t(`danielBook.propheticChapter.${section}`)}
+                    </time>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+          <Card
+            className="h-[30rem]"
+            description={t(
+              `danielBook.propheticChapter.${identifier}.${selectedSection}`
+            )}
+            footer={
+              selectedSection === SectionsChapter2.Maps && (
+                <div className="flex m-4 space-x-4">
                   <Image
                     className={'w-[48%]'}
-                    src={identifierToTodayMap[identifier]}
-                    alt={`${identifier}.${selectedSection}2`}
+                    src={identifierToMap[identifier]}
+                    alt={`${identifier}.${selectedSection}`}
                   />
-                )}
-              </div>
-            )
-          }
-        />
+                  {identifierToTodayMap[identifier] && (
+                    <Image
+                      className={'w-[48%]'}
+                      src={identifierToTodayMap[identifier]}
+                      alt={`${identifier}.${selectedSection}2`}
+                    />
+                  )}
+                </div>
+              )
+            }
+          />
+        </div>
       </div>
     </div>
   );

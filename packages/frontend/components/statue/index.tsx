@@ -37,7 +37,9 @@ const Statue: React.FC<StatueProps> = ({
               } rounded-lg w-64 hover:bg-gray-600 z-10`}
               onClick={() => setIdentifier(identifier)}
             >
-              <span>{t(`chapter2.${identifier}.title`)}</span>
+              <span>
+                {t(`danielBook.propheticChapter.${identifier}.title`)}
+              </span>
             </button>
             <div className="flex mt-auto mr-[-10rem] mb-8 w-full bg-gray-200 h-0.5 " />
           </div>

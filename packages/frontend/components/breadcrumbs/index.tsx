@@ -35,19 +35,19 @@ const Breadcrumbs = ({ t }: { t: TFunction<'translation', undefined> }) => {
       <Link href="/" className="hover:font-semibold">
         {t('home')}
       </Link>
-      {segments.map((segment, index) => {
-        return (
-          <span key={index}>
-            {index === segments.length - 1 ? (
-              <span className="font-bold">{` > ${t(segment.label)}`}</span>
-            ) : (
-              <Link href={segment.path} className="hover:font-semibold">
-                {` > ${t(segment.label)}`}
-              </Link>
-            )}
-          </span>
-        );
-      })}
+      {segments.map((segment, index) => (
+        <span key={index}>
+          {index === segments.length - 1 ? (
+            <span className="font-bold">{` ${index !== 0 ? '>' : ''} ${t(
+              segment.label
+            )}`}</span>
+          ) : (
+            <Link href={segment.path} className="hover:font-semibold">
+              {` ${index !== 0 ? '>' : ''} ${t(segment.label)}`}
+            </Link>
+          )}
+        </span>
+      ))}
     </>
   );
 };

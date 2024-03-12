@@ -41,10 +41,6 @@ const Carousel: React.FC<CarouselProps> = ({
     key: (index + 1).toString(),
   })).map((slide_, index) => {
     const isCurrentSlide = slide === index;
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const chapterImage = require(`../../public/assets/chapters/${book}/c${
-      index + 1
-    }.jpeg`);
     const content = (
       <div className="cursor-pointer">
         <Image
@@ -52,7 +48,9 @@ const Carousel: React.FC<CarouselProps> = ({
             isCurrentSlide && 'hover:scale-110 transition-transform'
           }`}
           style={{ objectFit: 'cover' }}
-          src={chapterImage}
+          width="200"
+          height="200"
+          src={`/assets/chapters/${book}/c${index + 1}.jpeg`}
           alt={index.toString()}
         />
         {isCurrentSlide && (
@@ -73,6 +71,7 @@ const Carousel: React.FC<CarouselProps> = ({
       return { ...slide_, onClick: () => setSlide(index), content };
     }
   });
+
   return (
     <div className="h-72 m-auto w-[40rem] mt-4 mb-4">
       <SpringCarouselCard
