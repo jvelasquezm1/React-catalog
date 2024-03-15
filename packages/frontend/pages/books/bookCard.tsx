@@ -16,8 +16,8 @@ const BookCard: React.FC<CardProps> = ({
   buttonTitle,
 }) => {
   return (
-    <div className="m-auto ml-14 mr-14 flex-1 text-center p-8 overflow-auto rounded-2xl border-l border-b">
-      <div className="shadow-lg bg-slate-500 m-auto bg-opacity-40 rounded-lg p-4 overflow-auto h-96">
+    <div className="container">
+      <div className="m-auto rounded-lg p-4 overflow-auto h-96">
         <p className="p-8 text-5xl font-bold">{title}</p>
         <p className="block text-justify text-base border-t p-8">
           {description}

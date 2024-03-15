@@ -20,11 +20,9 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 
   return (
     <div className="flex mt-24">
-      <div className="w-[40%] m-auto space-y-12">
+      <div className="container space-y-4">
         <span className="text-5xl font-bold">{title}</span>
-        <span className="block text-justify bg-slate-400 bg-opacity-40 rounded-md p-4">
-          {description}
-        </span>
+        <span className="block text-justify border-t pt-4">{description}</span>
       </div>
       <div className="w-[50%]">
         <Carousel

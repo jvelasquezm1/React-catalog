@@ -30,7 +30,7 @@ const Statue: React.FC<StatueProps> = ({
         {Object.values(StatueIdentifiers).map((identifier) => (
           <div key={identifier} className="flex">
             <button
-              className={`border-b-gray-200 border-b-2 h-12 ${
+              className={`border-b border-l h-12 ${
                 identifierToMargin[identifier]
               } ${
                 identifier === identifierSelected && 'bg-gray-800'

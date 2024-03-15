@@ -13,3 +13,7 @@ body {
   overscroll-behavior: none;
   overflow: auto;
 }
+
+.container {
+  @apply shadow-lg m-auto ml-14 mr-14 flex-1 text-center p-8 overflow-auto rounded-2xl border-l border-b;
+}
