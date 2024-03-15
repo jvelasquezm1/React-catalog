@@ -14,21 +14,17 @@ const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex mt-[-3rem]">
-      <div className="z-10 m-28 flex flex-col space-y-12">
-        <span className="drop-shadow-xl text-7xl block">
-          {t('biblicalProphecy')}
-        </span>
-        <span className="block w-[30rem] shadow-lg bg-slate-600 bg-opacity-50 p-4 rounded-lg">
-          {t('prophecyDescription')}
-        </span>
-        <Link
-          href="books"
-          className="w-32 text-center bg-blue-500 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-        >
-          Comenzar
-        </Link>
-      </div>
+    <div className="m-auto mt-[-3rem] z-10 flex flex-col space-y-12 items-center">
+      <p className="mt-40 drop-shadow-xl text-7xl">{t('biblicalProphecy')}</p>
+      <p className="w-[50rem] shadow-lg p-4 rounded-lg border-l border-b">
+        {t('prophecyDescription')}
+      </p>
+      <Link
+        href="books"
+        className="w-32 text-center bg-blue-500 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+      >
+        {t('continue')}
+      </Link>
     </div>
   );
 };
