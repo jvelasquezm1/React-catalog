@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
+import { imageSources } from './imageSource';
 
 type SpringCarouselCardProps = {
   slides: Array<{ onClick: () => void; content: JSX.Element; key: string }>;
@@ -50,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({
           style={{ objectFit: 'cover' }}
           width="200"
           height="200"
-          src={`/assets/chapters/${book}/c${index + 1}.jpeg`}
+          src={imageSources[book][index]}
           alt={index.toString()}
         />
         {isCurrentSlide && (
