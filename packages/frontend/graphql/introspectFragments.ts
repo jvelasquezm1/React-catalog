@@ -1,5 +1,4 @@
-const fs = require('fs');
-const fetch = require('cross-fetch');
+import fetch from 'cross-fetch';
 const API_ENDPOINT = 'http://localhost:3000';
 
 fetch(`${API_ENDPOINT}/graphql`, {

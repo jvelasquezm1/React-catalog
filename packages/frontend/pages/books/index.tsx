@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 
-import BookCard from './bookCard';
+import BookCard from '../../components/bookCard';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
