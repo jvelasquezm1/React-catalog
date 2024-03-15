@@ -1,5 +1,7 @@
-import React, { ReactNode, memo, useCallback, useEffect, useRef } from 'react';
+import React, { ReactNode, memo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { useOutsideClick } from '../../libs/hooks';
 
 interface ModalProps {
   children?: ReactNode;
@@ -17,25 +19,11 @@ const Modal: React.FC<ModalProps> = ({
   const { t } = useTranslation();
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = useCallback(
-    (event: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        setOpenModal(false);
-      }
-    },
-    [setOpenModal]
-  );
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [handleClickOutside, setOpenModal]);
+  useOutsideClick({
+    ref: modalRef,
+    callback: setOpenModal,
+    value: false,
+  });
 
   return (
     <div className="relative z-10">

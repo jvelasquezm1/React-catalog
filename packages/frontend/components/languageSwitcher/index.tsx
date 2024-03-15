@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
-import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { useOutsideClick } from '../../libs/hooks';
 
 const LanguageSwitcher: React.FC<{
   onChange?: (locale: string) => unknown;
@@ -34,25 +35,11 @@ const LanguageSwitcher: React.FC<{
     [switchToLocale, onChange]
   );
 
-  const handleOutsideClick = useCallback(
-    (event: MouseEvent) => {
-      if (
-        languageSwitcherRef.current &&
-        !languageSwitcherRef.current.contains(event.target as Node)
-      ) {
-        setDisplayLanguages(false);
-      }
-    },
-    [setDisplayLanguages]
-  );
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleOutsideClick);
-
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
-  }, [handleOutsideClick]);
+  useOutsideClick({
+    ref: languageSwitcherRef,
+    callback: setDisplayLanguages,
+    value: false,
+  });
 
   return (
     <div className="center w-44" ref={languageSwitcherRef}>
