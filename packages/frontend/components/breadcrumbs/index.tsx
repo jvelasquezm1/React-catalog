@@ -38,12 +38,12 @@ const Breadcrumbs = ({ t }: { t: TFunction<'translation', undefined> }) => {
       {segments.map((segment, index) => (
         <span key={index}>
           {index === segments.length - 1 ? (
-            <span className="font-bold">{` ${index !== 0 ? '>' : ''} ${t(
-              segment.label
-            )}`}</span>
+            <span className="font-bold">{` ${
+              index !== 0 && segment.path !== '/' ? '>' : ''
+            } ${t(segment.label)}`}</span>
           ) : (
             <Link href={segment.path} className="hover:font-semibold">
-              {` ${index !== 0 ? '>' : ''} ${t(segment.label)}`}
+              {` ${segment.path !== '/' ? '>' : ''} ${t(segment.label)}`}
             </Link>
           )}
         </span>

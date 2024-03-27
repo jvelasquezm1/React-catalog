@@ -4,7 +4,7 @@ import './styles.css';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Link from 'next/link';
 import { appWithTranslation, useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SideMenuItem, { RevelationChapters } from '../components/sideMenuItem';
 import { Home, Menu } from '../public/assets';
@@ -29,6 +29,17 @@ function CustomApp({ Component, pageProps }: AppProps) {
   const [displayDaniel, setDisplayDaniel] = useState(false);
   const [displayRevelation, setDisplayRevelation] = useState(false);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(window.scrollY > 1);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -37,12 +48,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
 
       {isSideMenuOpen && (
-        <div className="fixed w-52 top-0 bottom-0 left-0 bg-slate-700 z-20 overflow-auto">
+        <div className="fixed w-52 top-0 bottom-0 left-0 bg-blue-950 z-20 overflow-auto">
           <Link
             href="/"
             className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
-              router.pathname === '/' && 'bg-slate-700'
-            } hover:bg-slate-700 cursor-pointer flex`}
+              router.pathname === '/' && 'bg-blue-950'
+            } hover:bg-blue-950 cursor-pointer flex`}
           >
             <Home className="stroke-white h-6 w-6 fill-white mr-4" />
             <span>{t('home')}</span>
@@ -69,7 +80,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </div>
       )}
       <div className="flex flex-col">
-        <nav className="flex justify-between bg-slate-700 fixed top-0 bottom-3 w-full h-12 z-20">
+        <nav
+          className={`flex justify-between border-b fixed top-0 bottom-3 w-full h-12 z-20 ${
+            (isScrolling || isSideMenuOpen) && 'bg-blue-950'
+          }`}
+        >
           <div className="flex items-center">
             <button
               className={`center h-full p-2 ${
