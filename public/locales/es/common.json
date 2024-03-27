@@ -108,6 +108,29 @@
       "description": "En el capítulo 12 del Libro de Daniel, se presenta la conclusión de las visiones y profecías dadas al profeta Daniel. La visión comienza con la predicción de un tiempo de angustia y aflicción sin precedentes para el pueblo de Dios. Sin embargo, se asegura que aquellos cuyos nombres están escritos en el libro serán librados. Se destaca la resurrección de los muertos, algunos para vida eterna y otros para juicio y vergüenza. Se menciona la bendición de aquellos que esperan y alcanzan el final de los 1,335 días. Daniel se muestra perplejo por la visión, pero se le dice que los detalles específicos estarán sellados hasta el tiempo del fin. Se anima a Daniel a seguir su camino hasta el fin, momento en el cual se entenderán y se manifestarán plenamente las profecías. El capítulo 12 de Daniel concluye reafirmando la importancia de la perseverancia, la sabiduría y la fidelidad en medio de las dificultades, y subraya la certeza del cumplimiento de las profecías en el plan divino para el futuro."
     }
   },
+  "revelationBook": {
+    "chapter1": {
+      "title": "Cartas"
+    },
+    "chapter2": {
+      "title": "Sellos"
+    },
+    "chapter3": {
+      "title": "Trompetas"
+    },
+    "chapter4": {
+      "title": "Mujer y dragon"
+    },
+    "chapter5": {
+      "title": "Copas"
+    },
+    "chapter6": {
+      "title": "Gran ramera"
+    },
+    "chapter7": {
+      "title": "Triunfo final"
+    }
+  },
   "biblicalProphecy": "Profecía bíblica",
   "books": "Libros",
   "bookOfDaniel": "Libro de Daniel",

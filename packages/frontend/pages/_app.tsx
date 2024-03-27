@@ -44,7 +44,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Daniel y Apocalipsis</title>
+        <title>{t('biblicalProphecy')}</title>
       </Head>
 
       {isSideMenuOpen && (

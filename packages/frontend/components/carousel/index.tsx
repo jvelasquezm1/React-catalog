@@ -43,9 +43,9 @@ const Carousel: React.FC<CarouselProps> = ({
   })).map((slide_, index) => {
     const isCurrentSlide = slide === index;
     const content = (
-      <div className="cursor-pointer">
+      <div className="cursor-pointer bg-blue-950 bg-opacity-95 border-b shadow-lg rounded-lg p-8">
         <Image
-          className={`rounded-3xl h-60 w-60 ${
+          className={`rounded-3xl h-60 w-60 m-auto ${
             isCurrentSlide && 'hover:scale-110 transition-transform'
           }`}
           style={{ objectFit: 'cover' }}
@@ -55,9 +55,12 @@ const Carousel: React.FC<CarouselProps> = ({
           alt={index.toString()}
         />
         {isCurrentSlide && (
-          <p className="text-center mt-4">
-            {`${t('chapter')} ${titles ? titles[index] : index + 1}`}
-          </p>
+          <div className="text-center mt-8 flex flex-col space-y-5">
+            <p className="text-lg border-b pb-4">
+              {t(`${book}Book.chapter${index + 1}.title`)}
+            </p>
+            <p>{`${t('chapter')} ${titles ? titles[index] : index + 1}`}</p>
+          </div>
         )}
       </div>
     );
