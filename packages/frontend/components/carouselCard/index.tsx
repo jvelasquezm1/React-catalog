@@ -19,7 +19,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   const [slide, setSlide] = useState(0);
 
   return (
-    <div className="flex mt-24">
+    <div className="flex mt-32">
       <div className="container space-y-4">
         <span className="text-5xl font-bold">{title}</span>
         <span className="block text-justify border-t pt-4">{description}</span>

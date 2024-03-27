@@ -13,7 +13,7 @@ const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="m-auto mt-[-3rem] z-10 flex flex-col space-y-12 items-center">
+    <div className="m-auto flex flex-col space-y-12 items-center">
       <p className="mt-40 drop-shadow-xl text-7xl">{t('biblicalProphecy')}</p>
       <p className="container">{t('prophecyDescription')}</p>
       <Link

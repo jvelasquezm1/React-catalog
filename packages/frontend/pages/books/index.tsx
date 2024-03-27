@@ -14,7 +14,7 @@ const Books = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="h-svh flex mt-[-3rem] justify-between relative">
+    <div className="flex">
       <BookCard
         link={'/books/daniel'}
         description={

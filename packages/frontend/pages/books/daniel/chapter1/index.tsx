@@ -13,7 +13,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 const Chapter1 = () => {
   const { t } = useTranslation();
   return (
-    <div className="p-4">
+    <div>
       <h2 className="mb-3 text-3xl font-extrabold text-center pb-4 border-b">
         {t('danielBook.chapter1.title')}
       </h2>

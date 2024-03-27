@@ -8,6 +8,7 @@ import Menu from './menu';
 import Home from './home';
 import DownArrow from './downArrow';
 import RightArrow from './rightArrow';
+import UpArrow from './upArrow';
 
 export {
   CheckCircleIcon,
@@ -20,4 +21,5 @@ export {
   Home,
   DownArrow,
   RightArrow,
+  UpArrow,
 };

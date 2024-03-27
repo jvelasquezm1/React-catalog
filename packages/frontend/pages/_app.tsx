@@ -4,10 +4,10 @@ import './styles.css';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Link from 'next/link';
 import { appWithTranslation, useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SideMenuItem, { RevelationChapters } from '../components/sideMenuItem';
-import { Home, Menu } from '../public/assets';
+import { Home } from '../public/assets';
 import { useRouter } from 'next/router';
 import LanguageSwitcher from '../components/languageSwitcher';
 import Breadcrumbs from '../components/breadcrumbs';
@@ -28,18 +28,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
   });
   const [displayDaniel, setDisplayDaniel] = useState(false);
   const [displayRevelation, setDisplayRevelation] = useState(false);
-  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolling(window.scrollY > 1);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -47,62 +35,49 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>{t('biblicalProphecy')}</title>
       </Head>
 
-      {isSideMenuOpen && (
-        <div className="fixed w-52 top-0 bottom-0 left-0 bg-blue-950 z-20 overflow-auto">
-          <Link
-            href="/"
-            className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
-              router.pathname === '/' && 'bg-blue-950'
-            } hover:bg-blue-950 cursor-pointer flex`}
-          >
-            <Home className="stroke-white h-6 w-6 fill-white mr-4" />
-            <span>{t('home')}</span>
-          </Link>
+      <div className="fixed w-52 top-0 bottom-0 left-0 bg-blue-950 z-20 overflow-auto">
+        <Link
+          href="/"
+          className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
+            router.pathname === '/' && 'bg-blue-950'
+          } hover:bg-blue-950 cursor-pointer flex`}
+        >
+          <Home className="stroke-white h-6 w-6 fill-white mr-4" />
+          <span>{t('home')}</span>
+        </Link>
 
-          <SideMenuItem
-            label={t('daniel')}
-            onClick={() => setDisplayDaniel(!displayDaniel)}
-            isOpen={displayDaniel}
-            chapters={Array.from({ length: 12 })}
-            basePath="/books/daniel"
-            route={router.pathname}
-            t={t}
-          />
-          <SideMenuItem
-            label={t('revelation')}
-            onClick={() => setDisplayRevelation(!displayRevelation)}
-            isOpen={displayRevelation}
-            chapters={Object.values(RevelationChapters)}
-            basePath="/books/revelation"
-            route={router.pathname}
-            t={t}
-          />
-        </div>
-      )}
+        <SideMenuItem
+          label={t('daniel')}
+          onClick={() => setDisplayDaniel(!displayDaniel)}
+          isOpen={displayDaniel}
+          chapters={Array.from({ length: 12 })}
+          basePath="/books/daniel"
+          route={router.pathname}
+          t={t}
+        />
+        <SideMenuItem
+          label={t('revelation')}
+          onClick={() => setDisplayRevelation(!displayRevelation)}
+          isOpen={displayRevelation}
+          chapters={Object.values(RevelationChapters)}
+          basePath="/books/revelation"
+          route={router.pathname}
+          t={t}
+        />
+      </div>
       <div className="flex flex-col">
         <nav
-          className={`flex justify-between border-b fixed top-0 bottom-3 w-full h-12 z-20 ${
-            (isScrolling || isSideMenuOpen) && 'bg-blue-950'
-          }`}
+          className={
+            'flex justify-between border-b fixed top-0 bottom-3 w-full h-12 z-20 bg-gradient-to-r from-[#172554] to-[#537895]'
+          }
         >
-          <div className="flex items-center">
-            <button
-              className={`center h-full p-2 ${
-                isSideMenuOpen ? 'mr-48' : 'mr-[1rem]'
-              }`}
-              onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
-            >
-              <Menu className="stroke-white h-6" />
-            </button>
+          <div className="flex items-center ml-64">
             <Breadcrumbs t={t} />
           </div>
           <LanguageSwitcher />
         </nav>
 
-        <main
-          className="app mt-12"
-          onClick={() => isSideMenuOpen && setIsSideMenuOpen(false)}
-        >
+        <main className="mt-12 ml-52 p-8">
           <ApolloProvider client={client}>
             <Component {...pageProps} />
           </ApolloProvider>

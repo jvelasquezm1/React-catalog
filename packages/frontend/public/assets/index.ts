@@ -40,6 +40,7 @@ import {
   Pen,
   RightArrow,
   Symbols,
+  UpArrow,
 } from './svg';
 
 export {
@@ -53,6 +54,7 @@ export {
   Home,
   DownArrow,
   RightArrow,
+  UpArrow,
   Belly,
   Chest,
   Feet,
