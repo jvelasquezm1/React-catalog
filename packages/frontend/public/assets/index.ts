@@ -1,10 +1,14 @@
 import {
   Babylon,
+  Bear,
+  Beast,
   FireStatue,
   Friends,
   Furnace,
   Heaven,
+  Horn,
   Horse,
+  Leopard,
   Lion,
   World,
 } from './images';
@@ -70,4 +74,8 @@ export {
   Horse,
   Furnace,
   FireStatue,
+  Beast,
+  Horn,
+  Leopard,
+  Bear,
 };
