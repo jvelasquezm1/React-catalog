@@ -5,5 +5,15 @@ import Thyatira from './thyatira.jpeg';
 import Sardis from './sardis.jpeg';
 import Philadelphia from './philadelphia.jpeg';
 import Laodicea from './laodicea.jpeg';
+import Paper from './paper.jpeg';
 
-export { Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, Laodicea };
+export {
+  Ephesus,
+  Smyrna,
+  Pergamum,
+  Thyatira,
+  Sardis,
+  Philadelphia,
+  Laodicea,
+  Paper,
+};
