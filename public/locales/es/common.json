@@ -131,6 +131,15 @@
       "title": "Triunfo final"
     }
   },
+  "revelationLetters": {
+    "Ephesus": { "title": "Éfeso" },
+    "Smyrna": { "title": "Esmirna" },
+    "Pergamum": { "title": "Pérgamo" },
+    "Thyatira": { "title": "Tiatira" },
+    "Sardis": { "title": "Sardis" },
+    "Philadelphia": { "title": "Filadelfia" },
+    "Laodicea": { "title": "Laodicea" }
+  },
   "biblicalProphecy": "Profecía bíblica",
   "books": "Libros",
   "bookOfDaniel": "Libro de Daniel",

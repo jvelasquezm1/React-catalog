@@ -50,18 +50,29 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
           <RightArrow className="stroke-white h-6 w-6 fill-white ml-auto" />
         )}
       </button>
-      {isOpen &&
-        chapters.map((chapter, index) => (
+      {isOpen && (
+        <>
           <Link
-            key={index}
             className={`block p-2 pl-6 w-full text-sm ${
-              route === `${basePath}/chapter${index + 1}` && 'bg-slate-900'
+              route === `${basePath}` && 'bg-slate-900'
             } hover:bg-slate-900`}
-            href={`${basePath}/chapter${index + 1}`}
+            href={`${basePath}`}
           >
-            {chapter ? t(chapter) : `${t('chapter')} ${index + 1}`}
+            {`${t('home')}`}
           </Link>
-        ))}
+          {chapters.map((chapter, index) => (
+            <Link
+              key={index}
+              className={`block p-2 pl-8 w-full text-sm ${
+                route === `${basePath}/chapter${index + 1}` && 'bg-slate-900'
+              } hover:bg-slate-900`}
+              href={`${basePath}/chapter${index + 1}`}
+            >
+              {chapter ? t(chapter) : `${t('chapter')} ${index + 1}`}
+            </Link>
+          ))}
+        </>
+      )}
     </div>
   );
 };

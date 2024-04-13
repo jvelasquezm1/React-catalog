@@ -1,6 +1,9 @@
 import React, { memo, useState } from 'react';
 import Card from '../../../../components/card';
-import { StatueIdentifiers } from '../../../../public/shared/identifiers';
+import {
+  Identifiers,
+  StatueIdentifiers,
+} from '../../../../public/shared/identifiers';
 import {
   BabylonMap,
   CalendarIcon,
@@ -15,7 +18,7 @@ import {
   Heaven,
   World,
 } from '../../../../public/assets';
-import Beasts from '../../../../components/beasts';
+import Beasts from './beasts';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -38,6 +41,9 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 const Chapter7 = () => {
   const { t } = useTranslation();
   const [identifier, setIdentifier] = useState(StatueIdentifiers.Babylon);
+  const handleSetIdentifier = (newIdentifier: Identifiers) => {
+    setIdentifier(newIdentifier as StatueIdentifiers);
+  };
   const [selectedSection, setSelectedSection] = useState(
     SectionsChapter7.History
   );
@@ -75,7 +81,7 @@ const Chapter7 = () => {
       </h2>
       <div className="flex">
         <Beasts
-          setIdentifier={setIdentifier}
+          setIdentifier={handleSetIdentifier}
           t={t}
           identifierSelected={identifier}
         />

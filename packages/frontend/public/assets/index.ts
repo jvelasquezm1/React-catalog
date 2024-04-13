@@ -13,6 +13,15 @@ import {
   World,
 } from './images';
 import {
+  Ephesus,
+  Smyrna,
+  Pergamum,
+  Thyatira,
+  Sardis,
+  Philadelphia,
+  Laodicea,
+} from './letters';
+import {
   BabylonMap,
   BabylonTodayMap,
   GreeceMap,
@@ -80,4 +89,11 @@ export {
   Horn,
   Leopard,
   Bear,
+  Ephesus,
+  Smyrna,
+  Pergamum,
+  Thyatira,
+  Sardis,
+  Philadelphia,
+  Laodicea,
 };
