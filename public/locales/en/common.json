@@ -132,13 +132,41 @@
     }
   },
   "revelationLetters": {
-    "Ephesus": { "title": "Ephesus" },
-    "Smyrna": { "title": "Smyrna" },
-    "Pergamum": { "title": "Pergamum" },
-    "Thyatira": { "title": "Thyatira" },
-    "Sardis": { "title": "Sardis" },
-    "Philadelphia": { "title": "Philadelphia" },
-    "Laodicea": { "title": "Laodicea" }
+    "Ephesus": {
+      "title": "Ephesus",
+      "description": "In John's letter to the church of Ephesus, praise is primarily given to the church for its diligent labor, perseverance, and rejection of evil. However, they are also warned that they have lost their first love, their initial fervor for Christ. John exhorts them to repent and return to practicing the deeds they did at first. Otherwise, they will face the threat of God removing their lampstand, symbolizing the loss of their position as a church.",
+      "map": "https://shorturl.at/gpFK6"
+    },
+    "Smyrna": {
+      "title": "Smyrna",
+      "description": "In John's letter to the church of Smyrna, the fidelity and perseverance of the congregation are praised despite the persecution and poverty they face. Although they are materially poor, they are spiritually rich. John assures them that the suffering they are experiencing will be rewarded with the crown of eternal life. He warns them of the coming of even more difficult trials but urges them to remain faithful unto death.",
+      "map": "https://shorturl.at/fsEGH"
+    },
+    "Pergamum": {
+      "title": "Pergamum",
+      "description": "In John's letter to the church of Pergamum, the location of the church in a city where idolatry and the influence of evil abound is mentioned. Despite this, some members of the church have maintained their faith even amidst the persecution and martyrdom of Antipas, a faithful witness. However, they are reproached for tolerating the teaching of Balaam and the Nicolaitans, which promote immorality and idolatry. John urges them to repent and turn away from these harmful practices, warning them of the consequences of not doing so.",
+      "map": "https://shorturl.at/morwB"
+    },
+    "Thyatira": {
+      "title": "Thyatira",
+      "description": "In John's letter to the church of Thyatira, praise is given for their love, faith, service, and perseverance, as well as for their growth in deeds that surpass the first ones. However, John also reproaches them for tolerating Jezebel, a woman who teaches and seduces the servants of God to commit immorality and participate in idolatry. He warns them of the consequences of following her teaching and urges them to repent. Furthermore, he promises that whoever overcomes and keeps the deeds until the end will receive authority over the nations and the morning star.",
+      "map": "https://shorturl.at/mqyQ3"
+    },
+    "Sardis": {
+      "title": "Sardis",
+      "description": "In John's letter to the church of Sardis, it begins by acknowledging that the church has a reputation for being alive, but in reality, it is spiritually dead. Although they have received instructions, they have not fully complied with them. They are urged to wake up and strengthen the remaining things, reminding them that if they do not repent, a sudden and unexpected judgment will come upon them. However, it is also mentioned that there are some who have not soiled their garments and will be clothed in white. To these, it is promised that their names will not be erased from the book of life and they will be acknowledged before the Father and His angels.",
+      "map": "https://t.ly/Pt_Tc"
+    },
+    "Philadelphia": {
+      "title": "Philadelphia",
+      "description": "In John's letter to the church of Philadelphia, praise is mainly given for the fidelity and perseverance of the congregation, despite their little strength. They are told that they have kept the word of Christ and have not denied His name. Unlike other churches, they receive no reprimand or warning, only words of encouragement and promises. It is promised to them that those who remain faithful will be preserved in the hour of trial that will come upon the whole world. They are also assured that they will have access to the New Jerusalem and will be marked with the name of God and the city of God.",
+      "map": "https://t.ly/t1oxh"
+    },
+    "Laodicea": {
+      "title": "Laodicea",
+      "description": "In John's letter to the church of Laodicea, a severe criticism is presented towards the congregation. They are reproached for being lukewarm, neither cold nor hot, which disgusts God. Despite their material wealth, they are warned that they are spiritually miserable, blind, and naked. They are urged to buy refined gold (genuine faith), white garments (righteousness), and eye salve (spiritual discernment). Additionally, they are asked to repent and open the door to Christ so that He may enter and commune with them. To those who listen and repent, communion with Christ and participation in His reign are promised.",
+      "map": "https://t.ly/qAENp"
+    }
   },
   "biblicalProphecy": "Biblical prophecy",
   "books": "Books",

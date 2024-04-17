@@ -132,13 +132,41 @@
     }
   },
   "revelationLetters": {
-    "Ephesus": { "title": "Éfeso" },
-    "Smyrna": { "title": "Esmirna" },
-    "Pergamum": { "title": "Pérgamo" },
-    "Thyatira": { "title": "Tiatira" },
-    "Sardis": { "title": "Sardis" },
-    "Philadelphia": { "title": "Filadelfia" },
-    "Laodicea": { "title": "Laodicea" }
+    "Ephesus": {
+      "title": "Éfeso",
+      "description": "En la carta de Juan a la iglesia de Efeso, se destaca principalmente la alabanza a la iglesia por su labor diligente, su perseverancia y su rechazo al mal. Sin embargo, también se les advierte que han perdido su primer amor, es decir, su fervor inicial por Cristo. Juan les exhorta a arrepentirse y a volver a practicar las obras que realizaban al principio. De lo contrario, se enfrentarán a la amenaza de que Dios removerá su candelabro, simbolizando la pérdida de su posición como iglesia",
+      "map": "https://shorturl.at/gpFK6"
+    },
+    "Smyrna": {
+      "title": "Esmirna",
+      "description": "En la carta de Juan a la iglesia de Esmirna, se elogia la fidelidad y la perseverancia de la congregación a pesar de la persecución y la pobreza que enfrentan. Aunque son pobres materialmente, son espiritualmente ricos. Juan les asegura que el sufrimiento que están experimentando será recompensado con la corona de la vida eterna. Les advierte sobre la venida de pruebas más difíciles, pero les insta a permanecer fieles hasta la muerte",
+      "map": "https://shorturl.at/fsEGH"
+    },
+    "Pergamum": {
+      "title": "Pérgamo",
+      "description": "En la carta de Juan a la iglesia de Pérgamo, se menciona la ubicación de la iglesia en una ciudad donde abunda la idolatría y la influencia del mal. A pesar de esto, algunos miembros de la iglesia han mantenido su fe incluso en medio de la persecución y el martirio de Antipas, un fiel testigo. Sin embargo, se les reprocha por tolerar la enseñanza de Balaam y los nicolaítas, que promueven la inmoralidad y la idolatría. Juan los insta a arrepentirse y a apartarse de estas prácticas dañinas, advirtiéndoles sobre las consecuencias de no hacerlo",
+      "map": "https://shorturl.at/morwB"
+    },
+    "Thyatira": {
+      "title": "Tiatira",
+      "description": "En la carta de Juan a la iglesia de Tiatira, se destaca la alabanza por su amor, fe, servicio y perseverancia, así como por su crecimiento en obras que superan las primeras. Sin embargo, Juan también les reprocha por tolerar a Jezabel, una mujer que enseña y seduce a los siervos de Dios a cometer inmoralidades y a participar en la idolatría. Les advierte sobre las consecuencias de seguir su enseñanza y les insta a arrepentirse. Además, promete que quien venza y guarde las obras hasta el final recibirá autoridad sobre las naciones y la estrella de la mañana",
+      "map": "https://shorturl.at/mqyQ3"
+    },
+    "Sardis": {
+      "title": "Sardis",
+      "description": "En la carta de Juan a la iglesia de Sardis, se comienza reconociendo que la iglesia tiene una reputación de estar viva, pero en realidad está espiritualmente muerta. Aunque han recibido instrucciones, no han cumplido plenamente con ellas. Se les urge a despertar y fortalecer las cosas que quedan, recordándoles que si no se arrepienten, vendrá sobre ellos un juicio repentino e inesperado. Sin embargo, también se menciona que hay algunos que aún no han manchado sus vestiduras y serán vestidos de blanco. A estos se les promete que sus nombres no serán borrados del libro de la vida y serán reconocidos delante del Padre y de sus ángeles",
+      "map": "https://t.ly/Pt_Tc"
+    },
+    "Philadelphia": {
+      "title": "Filadelfia",
+      "description": "En la carta de Juan a la iglesia de Filadelfia, se elogia principalmente la fidelidad y perseverancia de la congregación, a pesar de su poca fuerza. Se les dice que han guardado la palabra de Cristo y no han negado su nombre. A diferencia de otras iglesias, no reciben ninguna reprensión o advertencia, sino solo palabras de aliento y promesas. Se les promete que aquellos que permanezcan fieles serán preservados en la hora de la prueba que vendrá sobre todo el mundo. También se les asegura que tendrán acceso a la Nueva Jerusalén y serán marcados con el nombre de Dios y de la ciudad de Dios",
+      "map": "https://t.ly/t1oxh"
+    },
+    "Laodicea": {
+      "title": "Laodicea",
+      "description": "En la carta de Juan a la iglesia de Laodicea, se presenta una crítica severa hacia la congregación. Se les reprocha por ser tibios, ni fríos ni calientes, lo que provoca disgusto en Dios. A pesar de su riqueza material, se les advierte que son espiritualmente miserables, ciegos y desnudos. Se les insta a comprar oro refinado por el fuego (fe genuina), vestiduras blancas (justicia) y colirio para los ojos (discernimiento espiritual). Además, se les pide que se arrepientan y abran la puerta a Cristo para que entre y comunique con ellos. A quienes escuchen y se arrepientan, se les promete la comunión con Cristo y la participación en su reinado",
+      "map": "https://t.ly/qAENp"
+    }
   },
   "biblicalProphecy": "Profecía bíblica",
   "books": "Libros",
