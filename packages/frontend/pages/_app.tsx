@@ -51,7 +51,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           onClick={() => setDisplayDaniel(!displayDaniel)}
           isOpen={displayDaniel}
           chapters={Array.from({ length: 12 })}
-          basePath="/books/daniel"
+          basePath="/daniel"
           route={router.pathname}
           t={t}
         />
@@ -60,7 +60,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           onClick={() => setDisplayRevelation(!displayRevelation)}
           isOpen={displayRevelation}
           chapters={Object.values(RevelationChapters)}
-          basePath="/books/revelation"
+          basePath="/revelation"
           route={router.pathname}
           t={t}
         />

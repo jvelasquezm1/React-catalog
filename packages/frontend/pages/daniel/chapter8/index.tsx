@@ -57,6 +57,13 @@ const buttonsConfig: ButtonConfig[] = [
     buttonWidth: 'w-[400%]',
   },
   {
+    year: 34,
+    timelapse: 2300,
+    targetTimelapse: 1810,
+    label: '1810 años',
+    buttonWidth: 'w-full',
+  },
+  {
     year: 457,
     timelapse: 70,
     targetTimelapse: 70,
@@ -78,20 +85,33 @@ const buttonsConfig: ButtonConfig[] = [
     buttonWidth: 'w-[200%]',
   },
   {
-    year: 34,
-    timelapse: 2300,
-    targetTimelapse: 1810,
-    label: '1810 años',
-    buttonWidth: 'w-full',
+    year: 27,
+    timelapse: 1,
+    targetTimelapse: 1,
+    label: '1/2 semana',
+    buttonWidth: 'w-[100%]',
+  },
+  {
+    year: 31,
+    timelapse: 1,
+    targetTimelapse: 1,
+    label: '1/2 semana',
+    buttonWidth: 'w-[100%]',
   },
 ];
 
 const generateClassNames = (event: Event, timelapse: number): string => {
-  let classNames = 'w-[400%] h-32 translate-y-2 z-0 translate-x-1/2 ';
-  if (event.year === 457) classNames += 'border-2 ';
-  if (event.year === 34 && timelapse === 2300)
+  let classNames = 'h-32 translate-y-2 z-0 translate-x-1/2 ';
+  if (event.year === 457) classNames += 'w-[400%] border-2 ';
+  if (
+    (event.year === 34 && timelapse === 2300) ||
+    (event.year === 31 && timelapse === 1)
+  )
     classNames += 'border-2 border-l-0 w-[100%] ';
-  if (event.year === 408 && timelapse === 70)
+  if (
+    (event.year === 408 && timelapse === 70) ||
+    (event.year === 27 && timelapse === 1)
+  )
     classNames += 'border-2 w-[100%] ';
   return classNames.trim();
 };
@@ -127,14 +147,15 @@ const Chapter8: React.FC = () => {
                   <button
                     key={btn.label}
                     onClick={() => switchWeeks(btn.targetTimelapse)}
-                    className={`${btn.buttonWidth} z-20 absolute h-32 m-auto translate-x-1/2`}
+                    disabled={btn.timelapse === btn.targetTimelapse}
+                    className={`${btn.buttonWidth} z-20 absolute h-32 m-auto translate-x-1/2 disabled:text-gray-300`}
                   >
                     {btn.label}
                   </button>
                 )
             )}
             <div className={generateClassNames(event, timelapse)} />
-            <div className="w-4 h-4 bg-blue-500 rounded-full z-10" />
+            <button className="w-4 h-4 bg-blue-500 rounded-full z-10" />
             <div className="mt-2 text-center">
               <p className="text-xl font-bold">{event.year}</p>
               <p className="text-sm">{event.description}</p>

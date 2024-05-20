@@ -1,9 +1,8 @@
 import React, { memo, useState } from 'react';
-import Card from '../../../../components/card';
-import {
-  Identifiers,
-  StatueIdentifiers,
-} from '../../../../public/shared/identifiers';
+
+import Statue from '../../../components/statue';
+import Card from '../../../components/card';
+import { StatueIdentifiers } from '../../../public/shared/identifiers';
 import {
   BabylonMap,
   CalendarIcon,
@@ -17,14 +16,12 @@ import {
   BabylonTodayMap,
   Heaven,
   World,
-} from '../../../../public/assets';
-import Beasts from './beasts';
-
+} from '../../../public/assets';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
-enum SectionsChapter7 {
+enum SectionsChapter2 {
   History = 'history',
   Maps = 'maps',
   Verses = 'verses',
@@ -38,14 +35,11 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-const Chapter7 = () => {
+const Chapter2 = () => {
   const { t } = useTranslation();
   const [identifier, setIdentifier] = useState(StatueIdentifiers.Babylon);
-  const handleSetIdentifier = (newIdentifier: Identifiers) => {
-    setIdentifier(newIdentifier as StatueIdentifiers);
-  };
   const [selectedSection, setSelectedSection] = useState(
-    SectionsChapter7.History
+    SectionsChapter2.History
   );
 
   const identifierToMap = {
@@ -67,21 +61,21 @@ const Chapter7 = () => {
   };
 
   const sectionIcons = {
-    [SectionsChapter7.History]: CalendarIcon,
-    [SectionsChapter7.Maps]: MapSVG,
-    [SectionsChapter7.Verses]: Book,
-    [SectionsChapter7.Prophecy]: Pen,
-    [SectionsChapter7.Symbols]: Symbols,
+    [SectionsChapter2.History]: CalendarIcon,
+    [SectionsChapter2.Maps]: MapSVG,
+    [SectionsChapter2.Verses]: Book,
+    [SectionsChapter2.Prophecy]: Pen,
+    [SectionsChapter2.Symbols]: Symbols,
   };
 
   return (
     <div className="p-4">
       <h2 className="mb-3 text-3xl font-extrabold text-center pb-4 border-b">
-        {t('danielBook.chapter7.title')}
+        {t('danielBook.chapter2.title')}
       </h2>
       <div className="flex">
-        <Beasts
-          setIdentifier={handleSetIdentifier}
+        <Statue
+          setIdentifier={setIdentifier}
           t={t}
           identifierSelected={identifier}
         />
@@ -90,7 +84,7 @@ const Chapter7 = () => {
             {t(`danielBook.propheticChapter.${identifier}.title`)}
           </span>
           <ol className="items-center flex justify-between border-b-2 pb-4">
-            {Object.values(SectionsChapter7).map((section) => {
+            {Object.values(SectionsChapter2).map((section) => {
               const isSectionSelected = selectedSection === section;
               const IconComponent = sectionIcons[section];
               return (
@@ -129,7 +123,7 @@ const Chapter7 = () => {
               `danielBook.propheticChapter.${identifier}.${selectedSection}`
             )}
             footer={
-              selectedSection === SectionsChapter7.Maps && (
+              selectedSection === SectionsChapter2.Maps && (
                 <div className="flex m-4 space-x-4">
                   <Image
                     className={'w-[48%]'}
@@ -153,4 +147,4 @@ const Chapter7 = () => {
   );
 };
 
-export default memo(Chapter7);
+export default memo(Chapter2);

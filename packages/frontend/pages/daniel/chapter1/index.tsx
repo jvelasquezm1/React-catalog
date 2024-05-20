@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import HorizontalCard from '../../../../components/horizontalCard';
-import { FireStatue, Furnace } from '../../../../public/assets';
+import HorizontalCard from '../../../components/horizontalCard';
+import { Babylon, Friends } from '../../../public/assets';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -10,14 +10,14 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-const Chapter3 = () => {
+const Chapter1 = () => {
   const { t } = useTranslation();
   return (
-    <div className="p-4">
+    <div>
       <h2 className="mb-3 text-3xl font-extrabold text-center pb-4 border-b">
-        {t('danielBook.chapter3.title')}
+        {t('danielBook.chapter1.title')}
       </h2>
-      <p className="mb-3">{t('danielBook.chapter3.description')}</p>
+      <p className="mb-3">{t('danielBook.chapter1.description')}</p>
       <div className="rounded-lg">
         <h2 className="mb-5 text-2xl font-extrabold">Datos interesantes</h2>
         <ul role="list" className="space-y-4">
@@ -32,7 +32,7 @@ const Chapter3 = () => {
                     monarcas más destacados de este imperio. Bajo su gobierno,
                     Babilonia experimentó un período de gran esplendor y
                     desarrollo arquitectónico."
-              imageSrc={Furnace}
+              imageSrc={Babylon}
             />
             <HorizontalCard
               title="Daniel y sus amigos"
@@ -44,7 +44,7 @@ const Chapter3 = () => {
                     contexto babilónico. Sin embargo, a lo largo del libro, 
                     Daniel y sus amigos continúan aferrándose a su fe en el Dios 
                     de Israel a pesar de los cambios impuestos en sus nombres y circunstancias."
-              imageSrc={FireStatue}
+              imageSrc={Friends}
             />
           </div>
         </ul>
@@ -53,4 +53,4 @@ const Chapter3 = () => {
   );
 };
 
-export default memo(Chapter3);
+export default memo(Chapter1);

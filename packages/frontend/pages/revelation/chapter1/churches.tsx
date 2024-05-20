@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import {
   ChurchesIdentifiers,
   Identifiers,
-} from '../../../../public/shared/identifiers';
+} from '../../../public/shared/identifiers';
 import {
   Ephesus,
   Smyrna,
@@ -11,9 +11,9 @@ import {
   Sardis,
   Philadelphia,
   Laodicea,
-} from '../../../../public/assets';
+} from '../../../public/assets';
 import { TFunction } from 'i18next';
-import VerticalScrollable from '../../../../components/verticalScrollable';
+import VerticalScrollable from '../../../components/verticalScrollable';
 
 interface ChurchesProps {
   setIdentifier: (identifier: Identifiers) => void;

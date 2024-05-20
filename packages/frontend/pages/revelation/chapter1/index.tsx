@@ -7,8 +7,8 @@ import Churches from './churches';
 import {
   ChurchesIdentifiers,
   Identifiers,
-} from '../../../../public/shared/identifiers';
-import { Paper } from '../../../../public/assets';
+} from '../../../public/shared/identifiers';
+import { Paper } from '../../../public/assets';
 import Image from 'next/image';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({

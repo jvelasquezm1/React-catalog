@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import CarouselCard from '../../../components/carouselCard';
+import CarouselCard from '../../components/carouselCard';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {

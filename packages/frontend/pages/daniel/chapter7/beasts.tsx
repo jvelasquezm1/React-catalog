@@ -2,11 +2,11 @@ import React, { memo } from 'react';
 import {
   Identifiers,
   StatueIdentifiers,
-} from '../../../../public/shared/identifiers';
-import { Bear, Beast, Horn, Leopard, Lion } from '../../../../public/assets';
+} from '../../../public/shared/identifiers';
+import { Bear, Beast, Horn, Leopard, Lion } from '../../../public/assets';
 import { TFunction } from 'i18next';
 import { omit } from 'lodash';
-import VerticalScrollable from '../../../../components/verticalScrollable';
+import VerticalScrollable from '../../../components/verticalScrollable';
 
 interface BeastsProps {
   setIdentifier: (identifier: Identifiers) => void;
