@@ -6,7 +6,7 @@ import {
 import { Bear, Beast, Horn, Leopard, Lion } from '../../../../public/assets';
 import { TFunction } from 'i18next';
 import { omit } from 'lodash';
-import VerticalScrollable from '../../../../components/verticalScrollable';
+import HorizontalScrollable from '../../../../components/horizontalScrollable';
 
 interface BeastsProps {
   setIdentifier: (identifier: Identifiers) => void;
@@ -22,13 +22,14 @@ const Beasts: React.FC<BeastsProps> = ({
   identifierSelected,
 }) => {
   return (
-    <VerticalScrollable
+    <HorizontalScrollable
       setIdentifier={setIdentifier}
       t={t}
       identifierSelected={identifierSelected}
       identifiers={Object.values(omit(StatueIdentifiers, 'HeavenKingdom'))}
       images={BeastsImages}
       titlePrefix="danielBook.propheticChapter"
+      hideButtons
     />
   );
 };

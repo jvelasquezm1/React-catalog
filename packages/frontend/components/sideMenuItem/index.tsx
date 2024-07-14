@@ -20,7 +20,6 @@ interface SideMenuItemProps {
   chapters: (RevelationChapters | string)[];
   basePath: string;
   route: string;
-  className?: string;
   t: TFunction<'translation', undefined>;
 }
 
@@ -31,11 +30,10 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
   chapters,
   basePath,
   route,
-  className,
   t,
 }) => {
   return (
-    <div className={className}>
+    <div className="text-white">
       <button
         className={`pl-4 pr-4 p-2 block w-full text-left font-semibold ${
           route.includes(basePath) && 'bg-slate-900'

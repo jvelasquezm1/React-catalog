@@ -38,12 +38,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <div className="fixed w-52 top-0 bottom-0 left-0 bg-blue-950 z-20 overflow-auto">
         <Link
           href="/"
-          className={`mt-12 pl-4 pr-4 p-2 block w-full text-left font-semibold ${
+          className={`mt-[0.45rem] pl-4 pr-4 p-2 block w-full text-left font-semibold ${
             router.pathname === '/' && 'bg-blue-950'
           } hover:bg-blue-950 cursor-pointer flex`}
         >
           <Home className="stroke-white h-6 w-6 fill-white mr-4" />
-          <span>{t('home')}</span>
+          <span className="text-white">{t('home')}</span>
         </Link>
 
         <SideMenuItem
@@ -68,16 +68,15 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <div className="flex flex-col">
         <nav
           className={
-            'flex justify-between border-b fixed top-0 bottom-3 w-full h-12 z-20 bg-gradient-to-r from-[#172554] to-[#537895]'
+            'ml-[13rem] flex justify-between border-b fixed top-0 bottom-3 w-full h-12 z-20 bg-gradient-to-r from-[#172554] to-[#537895]'
           }
         >
-          <div className="flex items-center ml-64">
-            <Breadcrumbs t={t} />
+          <div className="mr-52 ml-auto">
+            <LanguageSwitcher />
           </div>
-          <LanguageSwitcher />
         </nav>
 
-        <main className="mt-12 ml-52 p-8">
+        <main className="mt-3 ml-52 p-8">
           <ApolloProvider client={client}>
             <Component {...pageProps} />
           </ApolloProvider>

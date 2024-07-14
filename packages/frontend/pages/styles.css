@@ -4,9 +4,8 @@
 
 body {
   margin: 0;
-  background-image: linear-gradient(to right, #172554 0%, #537895 100%);
   font-family: 'Poppins', sans-serif;
-  color: white;
+  color: black;
   height: 100%;
   width: 100%;
   box-sizing: border-box;

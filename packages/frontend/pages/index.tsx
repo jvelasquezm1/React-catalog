@@ -18,7 +18,7 @@ const Home = () => {
       <p className="container">{t('prophecyDescription')}</p>
       <Link
         href="books"
-        className="w-32 text-center bg-blue-500 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+        className="w-32 text-center font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
       >
         {t('continue')}
       </Link>
