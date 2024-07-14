@@ -13,7 +13,7 @@ import {
   Laodicea,
 } from '../../../public/assets';
 import { TFunction } from 'i18next';
-import VerticalScrollable from '../../../components/verticalScrollable';
+import HorizontalScrollable from '../../../components/horizontalScrollable';
 
 interface ChurchesProps {
   setIdentifier: (identifier: Identifiers) => void;
@@ -37,13 +37,14 @@ const Churches: React.FC<ChurchesProps> = ({
   identifierSelected,
 }) => {
   return (
-    <VerticalScrollable
+    <HorizontalScrollable
       setIdentifier={setIdentifier}
       t={t}
       identifierSelected={identifierSelected}
       identifiers={Object.values(ChurchesIdentifiers)}
       images={ChurchesImages}
       titlePrefix="revelationLetters"
+      hideButtons
     />
   );
 };

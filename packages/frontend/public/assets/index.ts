@@ -20,7 +20,6 @@ import {
   Sardis,
   Philadelphia,
   Laodicea,
-  Paper,
 } from './letters';
 import {
   BabylonMap,
@@ -97,5 +96,4 @@ export {
   Sardis,
   Philadelphia,
   Laodicea,
-  Paper,
 };

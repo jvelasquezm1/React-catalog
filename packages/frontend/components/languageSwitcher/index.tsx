@@ -44,7 +44,7 @@ const LanguageSwitcher: React.FC<{
   return (
     <div className="center w-44" ref={languageSwitcherRef}>
       <button
-        className="h-full w-full text-left p-2 hover:bg-slate-400"
+        className="text-white h-[3rem] w-full text-left p-2"
         onClick={() => setDisplayLanguages(!displayLanguages)}
       >
         {t('language')}

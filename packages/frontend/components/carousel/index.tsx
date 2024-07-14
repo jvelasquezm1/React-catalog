@@ -1,5 +1,4 @@
-import React, { memo } from 'react';
-
+import React, { memo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -43,23 +42,30 @@ const Carousel: React.FC<CarouselProps> = ({
   })).map((slide_, index) => {
     const isCurrentSlide = slide === index;
     const content = (
-      <div className="cursor-pointer bg-blue-950 bg-opacity-95 border-b shadow-lg rounded-lg p-8">
+      <div
+        className={`cursor-pointer bg-opacity-95 border-b shadow-lg rounded-lg p-4 md:p-8 ${
+          isCurrentSlide ? 'bg-white' : 'bg-gray-100'
+        }`}
+        style={{ transition: 'transform 0.5s' }}
+      >
         <Image
-          className={`rounded-3xl h-60 w-60 m-auto ${
+          className={`rounded-3xl mx-auto ${
             isCurrentSlide && 'hover:scale-110 transition-transform'
           }`}
           style={{ objectFit: 'cover' }}
-          width="200"
-          height="200"
+          width="250"
+          height="250"
           src={imageSources[book][index]}
           alt={index.toString()}
         />
         {isCurrentSlide && (
-          <div className="text-center mt-8 flex flex-col space-y-5">
-            <p className="text-lg border-b pb-4">
+          <div className="text-center mt-4 md:mt-8 flex flex-col space-y-2 md:space-y-5">
+            <p className="text-base md:text-lg border-b pb-2 md:pb-4">
               {t(`${book}Book.chapter${index + 1}.title`)}
             </p>
-            <p>{`${t('chapter')} ${titles ? titles[index] : index + 1}`}</p>
+            <p className="text-sm md:text-base">{`${t('chapter')} ${
+              titles ? titles[index] : index + 1
+            }`}</p>
           </div>
         )}
       </div>
@@ -77,13 +83,27 @@ const Carousel: React.FC<CarouselProps> = ({
   });
 
   return (
-    <div className="h-72 m-auto w-[40rem] mt-4 mb-4">
+    <div className="h-full m-auto w-[90%] md:w-[40rem] mt-4 mb-4">
       <SpringCarouselCard
         slides={slides}
-        offsetRadius={5}
+        offsetRadius={2}
         showNavigation={false}
         goToSlide={slide}
       />
+      <div className="flex justify-center items-center mt-32 space-x-4">
+        <button
+          onClick={() => setSlide((slide - 1 + length) % length)}
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+        >
+          =
+        </button>
+        <button
+          onClick={() => setSlide((slide + 1) % length)}
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+        >
+          =
+        </button>
+      </div>
     </div>
   );
 };

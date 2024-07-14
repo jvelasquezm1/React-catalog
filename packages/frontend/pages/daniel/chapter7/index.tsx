@@ -79,16 +79,13 @@ const Chapter7 = () => {
       <h2 className="mb-3 text-3xl font-extrabold text-center pb-4 border-b">
         {t('danielBook.chapter7.title')}
       </h2>
-      <div className="flex">
+      <div>
         <Beasts
           setIdentifier={handleSetIdentifier}
           t={t}
           identifierSelected={identifier}
         />
-        <div className="m-4 flex flex-col bg-white text-black p-8 rounded-md space-y-4">
-          <span className="text-lg font-semibold border-b-2 pb-4 text-center">
-            {t(`danielBook.propheticChapter.${identifier}.title`)}
-          </span>
+        <div className="flex flex-col text-black p-8 rounded-md space-y-4">
           <ol className="items-center flex justify-between border-b-2 pb-4">
             {Object.values(SectionsChapter7).map((section) => {
               const isSectionSelected = selectedSection === section;

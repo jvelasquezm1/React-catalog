@@ -33,8 +33,8 @@ const Statue: React.FC<StatueProps> = ({
               className={`border-b border-l h-12 ${
                 identifierToMargin[identifier]
               } ${
-                identifier === identifierSelected && 'bg-blue-950'
-              } rounded-lg w-64 hover:bg-blue-900 z-10`}
+                identifier === identifierSelected && 'border-b-8 border-l-8'
+              } rounded-lg w-64 hover:border-b-8 hover:border-l-8 z-10`}
               onClick={() => setIdentifier(identifier)}
             >
               <span>
