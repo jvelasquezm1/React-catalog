@@ -44,7 +44,6 @@ const Churches: React.FC<ChurchesProps> = ({
       identifiers={Object.values(ChurchesIdentifiers)}
       images={ChurchesImages}
       titlePrefix="revelationLetters"
-      hideButtons
     />
   );
 };

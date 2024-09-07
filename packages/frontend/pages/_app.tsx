@@ -10,7 +10,6 @@ import SideMenuItem, { RevelationChapters } from '../components/sideMenuItem';
 import { Home } from '../public/assets';
 import { useRouter } from 'next/router';
 import LanguageSwitcher from '../components/languageSwitcher';
-import Breadcrumbs from '../components/breadcrumbs';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -34,53 +33,54 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{t('biblicalProphecy')}</title>
       </Head>
+      <div className="flex">
+        <div className="fixed w-64 top-0 bottom-0 left-0 bg-blue-950 z-20 overflow-auto">
+          <Link
+            href="/"
+            className={`mt-[0.45rem] pl-4 pr-4 p-2 block w-full text-left font-semibold ${
+              router.pathname === '/' && 'bg-blue-950'
+            } hover:bg-blue-950 cursor-pointer flex`}
+          >
+            <Home className="stroke-white h-6 w-6 fill-white mr-4" />
+            <span className="text-white">{t('home')}</span>
+          </Link>
 
-      <div className="fixed w-52 top-0 bottom-0 left-0 bg-blue-950 z-20 overflow-auto">
-        <Link
-          href="/"
-          className={`mt-[0.45rem] pl-4 pr-4 p-2 block w-full text-left font-semibold ${
-            router.pathname === '/' && 'bg-blue-950'
-          } hover:bg-blue-950 cursor-pointer flex`}
-        >
-          <Home className="stroke-white h-6 w-6 fill-white mr-4" />
-          <span className="text-white">{t('home')}</span>
-        </Link>
+          <SideMenuItem
+            label={t('daniel')}
+            onClick={() => setDisplayDaniel(!displayDaniel)}
+            isOpen={displayDaniel}
+            chapters={Array.from({ length: 12 })}
+            basePath="/daniel"
+            route={router.pathname}
+            t={t}
+          />
+          <SideMenuItem
+            label={t('revelation')}
+            onClick={() => setDisplayRevelation(!displayRevelation)}
+            isOpen={displayRevelation}
+            chapters={Object.values(RevelationChapters)}
+            basePath="/revelation"
+            route={router.pathname}
+            t={t}
+          />
+        </div>
+        <div className="flex flex-col">
+          <nav
+            className={
+              'ml-[16rem] bg-white flex justify-between border-b-[0.1px] fixed top-0 bottom-3 w-full h-12 z-20 border-blue-900'
+            }
+          >
+            <div className="mr-52 ml-auto">
+              <LanguageSwitcher />
+            </div>
+          </nav>
 
-        <SideMenuItem
-          label={t('daniel')}
-          onClick={() => setDisplayDaniel(!displayDaniel)}
-          isOpen={displayDaniel}
-          chapters={Array.from({ length: 12 })}
-          basePath="/daniel"
-          route={router.pathname}
-          t={t}
-        />
-        <SideMenuItem
-          label={t('revelation')}
-          onClick={() => setDisplayRevelation(!displayRevelation)}
-          isOpen={displayRevelation}
-          chapters={Object.values(RevelationChapters)}
-          basePath="/revelation"
-          route={router.pathname}
-          t={t}
-        />
-      </div>
-      <div className="flex flex-col">
-        <nav
-          className={
-            'ml-[13rem] flex justify-between border-b fixed top-0 bottom-3 w-full h-12 z-20 bg-gradient-to-r from-[#172554] to-[#537895]'
-          }
-        >
-          <div className="mr-52 ml-auto">
-            <LanguageSwitcher />
-          </div>
-        </nav>
-
-        <main className="mt-3 ml-52 p-8">
-          <ApolloProvider client={client}>
-            <Component {...pageProps} />
-          </ApolloProvider>
-        </main>
+          <main className="mt-3 ml-64 p-8">
+            <ApolloProvider client={client}>
+              <Component {...pageProps} />
+            </ApolloProvider>
+          </main>
+        </div>
       </div>
     </>
   );

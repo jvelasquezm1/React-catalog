@@ -29,7 +29,6 @@ const Beasts: React.FC<BeastsProps> = ({
       identifiers={Object.values(omit(StatueIdentifiers, 'HeavenKingdom'))}
       images={BeastsImages}
       titlePrefix="danielBook.propheticChapter"
-      hideButtons
     />
   );
 };

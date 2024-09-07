@@ -30,11 +30,9 @@ const Statue: React.FC<StatueProps> = ({
         {Object.values(StatueIdentifiers).map((identifier) => (
           <div key={identifier} className="flex">
             <button
-              className={`border-b border-l h-12 ${
-                identifierToMargin[identifier]
-              } ${
-                identifier === identifierSelected && 'border-b-8 border-l-8'
-              } rounded-lg w-64 hover:border-b-8 hover:border-l-8 z-10`}
+              className={`border h-12 ${identifierToMargin[identifier]} ${
+                identifier === identifierSelected && 'border-b-4 border-l-4'
+              } rounded-lg w-64 hover:border-b-4 hover:border-l-4 z-10`}
               onClick={() => setIdentifier(identifier)}
             >
               <span>

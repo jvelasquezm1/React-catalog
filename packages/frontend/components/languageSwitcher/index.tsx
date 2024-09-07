@@ -44,13 +44,13 @@ const LanguageSwitcher: React.FC<{
   return (
     <div className="center w-44" ref={languageSwitcherRef}>
       <button
-        className="text-white h-[3rem] w-full text-left p-2"
+        className=" h-[3rem] w-full text-left p-2"
         onClick={() => setDisplayLanguages(!displayLanguages)}
       >
         {t('language')}
       </button>
       {displayLanguages && (
-        <div className="z-10 bg-white divide-y divide-gray-100 rounded-b-lg shadow w-44">
+        <div className="z-10 divide-y divide-gray-100 rounded-b-lg shadow w-44">
           <ul className="py-2 text-sm text-gray-700 ">
             {locales?.map((option) => (
               <li key={option} className="hover:bg-gray-100">

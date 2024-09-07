@@ -14,7 +14,7 @@ const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex mt-14">
+    <div className="flex mt-24">
       <BookCard
         link={'/daniel'}
         description={

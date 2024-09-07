@@ -1,9 +1,10 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
 import { imageSources } from './imageSource';
+import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 
 type SpringCarouselCardProps = {
   slides: Array<{ onClick: () => void; content: JSX.Element; key: string }>;
@@ -43,7 +44,7 @@ const Carousel: React.FC<CarouselProps> = ({
     const isCurrentSlide = slide === index;
     const content = (
       <div
-        className={`cursor-pointer bg-opacity-95 border-b shadow-lg rounded-lg p-4 md:p-8 ${
+        className={`cursor-pointer bg-opacity-95 border shadow-lg rounded-lg p-4 md:p-8 ${
           isCurrentSlide ? 'bg-white' : 'bg-gray-100'
         }`}
         style={{ transition: 'transform 0.5s' }}
@@ -91,18 +92,14 @@ const Carousel: React.FC<CarouselProps> = ({
         goToSlide={slide}
       />
       <div className="flex justify-center items-center mt-32 space-x-4">
-        <button
+        <FaArrowCircleLeft
+          className="cursor-pointer text-xl text-blue-900"
           onClick={() => setSlide((slide - 1 + length) % length)}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
-        >
-          =
-        </button>
-        <button
+        />
+        <FaArrowCircleRight
+          className="cursor-pointer text-xl text-blue-900"
           onClick={() => setSlide((slide + 1) % length)}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
-        >
-          =
-        </button>
+        />
       </div>
     </div>
   );
